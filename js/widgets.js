@@ -343,31 +343,40 @@
     const S = { V: spec.V ?? 3, view: spec.view || "conv", R: 1000, changed: 0 };
     const wrap = h("div", "w-circuit", root);
     const reads = h("div", "w-reads", wrap);
-    const svg = el("svg", { viewBox: "0 0 600 300", class: "w-svg" }, wrap);
+    const svg = el("svg", { viewBox: "0 0 600 330", class: "w-svg" }, wrap);
     const ctl = h("div", "w-ctls", wrap);
-    // two "sides" connected by a wire loop
-    el("rect", { x: 40, y: 90, width: 70, height: 120, rx: 10, class: "w-sideP" }, svg);
-    el("rect", { x: 490, y: 90, width: 70, height: 120, rx: 10, class: "w-sideN" }, svg);
-    const tp = el("text", { x: 75, y: 160, class: "w-big", "text-anchor": "middle" }, svg); tp.textContent = "+";
-    const tn = el("text", { x: 525, y: 160, class: "w-big", "text-anchor": "middle" }, svg); tn.textContent = "−";
-    const loop = "M110,120 L110,60 L490,60 L490,120";
-    el("path", { d: loop, class: "w-tube" }, svg);
-    el("path", { d: loop, class: "w-wire" }, svg);
+    // a "push" box (+ on top, − below) and one wire that goes all the way around back into it
+    el("rect", { x: 50, y: 60, width: 100, height: 92, rx: 10, class: "w-sideP" }, svg);
+    el("rect", { x: 50, y: 168, width: 100, height: 92, rx: 10, class: "w-sideN" }, svg);
+    const tp = el("text", { x: 76, y: 116, class: "w-big", "text-anchor": "middle" }, svg); tp.textContent = "+";
+    const tn = el("text", { x: 76, y: 224, class: "w-big", "text-anchor": "middle" }, svg); tn.textContent = "−";
+    const PTS = [[100, 60], [100, 30], [540, 30], [540, 300], [100, 300], [100, 260], [100, 60]]; // closed loop, conventional direction
+    const outer = "M" + PTS.slice(0, 6).map((p) => p.join(",")).join(" L");
+    el("path", { d: outer, class: "w-tube" }, svg);
+    el("path", { d: outer, class: "w-wire" }, svg);
+    el("path", { d: "M100,260 L100,60", class: "w-wire w-probe" }, svg); // path of the charges inside the box
     // ammeter in the wire
-    el("circle", { cx: 300, cy: 60, r: 18, class: "w-meter" }, svg);
-    const ta = el("text", { x: 300, y: 61, class: "w-meterL", "text-anchor": "middle", "dominant-baseline": "central" }, svg); ta.textContent = "A";
-    const aVal = el("text", { x: 300, y: 34, class: "w-val", "text-anchor": "middle" }, svg);
-    // voltmeter between sides
-    el("path", { d: "M75,210 L75,255 L280,255 M320,255 L525,255 L525,210", class: "w-wire w-probe" }, svg);
-    el("circle", { cx: 300, cy: 255, r: 18, class: "w-meter" }, svg);
-    const tv = el("text", { x: 300, y: 256, class: "w-meterL", "text-anchor": "middle", "dominant-baseline": "central" }, svg); tv.textContent = "V";
-    const vVal = el("text", { x: 300, y: 228, class: "w-val", "text-anchor": "middle" }, svg);
-    const dirT = el("text", { x: 300, y: 112, class: "w-lab", "text-anchor": "middle", direction: "rtl" }, svg);
+    const aC = el("circle", { cx: 320, cy: 30, r: 18, class: "w-meter" }, svg);
+    const ta = el("text", { x: 320, y: 31, class: "w-meterL", "text-anchor": "middle", "dominant-baseline": "central" }, svg); ta.textContent = "A";
+    const aVal = el("text", { x: 350, y: 64, class: "w-val", "text-anchor": "middle" }, svg);
+    // voltmeter between + and −
+    el("path", { d: "M150,106 L210,106 L210,142 M210,178 L210,214 L150,214", class: "w-wire w-probe" }, svg);
+    el("circle", { cx: 210, cy: 160, r: 18, class: "w-meter" }, svg);
+    const tv = el("text", { x: 210, y: 161, class: "w-meterL", "text-anchor": "middle", "dominant-baseline": "central" }, svg); tv.textContent = "V";
+    const vVal = el("text", { x: 238, y: 166, class: "w-val", "text-anchor": "start" }, svg);
+    const dirT = el("text", { x: 395, y: 170, class: "w-lab", "text-anchor": "middle", direction: "rtl" }, svg);
+    const segs = []; let L = 0;
+    for (let i = 0; i < PTS.length - 1; i++) { const a = PTS[i], b = PTS[i + 1], l = Math.hypot(b[0] - a[0], b[1] - a[1]); segs.push({ a, b, l, s0: L }); L += l; }
+    const at = (s) => {
+      s = ((s % L) + L) % L;
+      const g = segs.find((x) => s <= x.s0 + x.l) || segs[segs.length - 1], f = (s - g.s0) / g.l;
+      return { x: g.a[0] + (g.b[0] - g.a[0]) * f, y: g.a[1] + (g.b[1] - g.a[1]) * f, ux: (g.b[0] - g.a[0]) / g.l, uy: (g.b[1] - g.a[1]) / g.l };
+    };
     const dots = [];
-    const L = 60 + 380 + 60; // path length approx
-    const pt = (s) => { s = ((s % L) + L) % L; if (s < 60) return [110, 120 - s]; if (s < 440) return [110 + (s - 60), 60]; return [490, 60 + (s - 440)]; };
-    for (let i = 0; i < 14; i++) dots.push({ s: (i * L) / 14, e: el("circle", { r: 6 }, svg) });
-    const arrow = el("polygon", { class: "w-arrow" }, svg);
+    const N = 26;
+    for (let i = 0; i < N; i++) dots.push({ s: (i * L) / N, e: el("circle", { r: 6 }, svg) });
+    svg.appendChild(aC); svg.appendChild(ta); // keep the ammeter above the moving charges
+    const arrows = [L * 0.2, L * 0.42, L * 0.68].map((s) => ({ s, e: el("polygon", { class: "w-arrow" }, svg) }));
     const ra = h("div", "w-read", reads); h("span", "w-read-l", ra, "זרם I"); const raV = h("b", "", ra);
     const rv = h("div", "w-read", reads); h("span", "w-read-l", rv, "מתח V"); const rvV = h("b", "", rv);
     sliderRow(ctl, { label: "מתח (\"הדחיפה\")", min: 0, max: 12, step: 0.5, unit: "V" }, S.V, (v) => { S.V = v; S.changed++; upd(); hooks.onChange && hooks.onChange(); });
@@ -380,16 +389,20 @@
       tg.textContent = S.view === "conv" ? "הצג תנועת אלקטרונים" : "הצג זרם קונבנציונלי";
       dirT.textContent = S.view === "conv" ? "זרם קונבנציונלי: מ-(+) אל (−)" : "אלקטרונים: מ-(−) אל (+)";
       dots.forEach((d) => d.e.setAttribute("class", S.view === "conv" ? "w-q conv" : "w-q elec"));
+      const dir = S.view === "conv" ? 1 : -1;
+      arrows.forEach((a) => {
+        const p = at(a.s), ux = p.ux * dir, uy = p.uy * dir, nx = -uy, ny = ux;
+        const tx = p.x + ux * 9, ty = p.y + uy * 9, bx = p.x - ux * 9, by = p.y - uy * 9;
+        a.e.setAttribute("points", `${tx + nx * 0},${ty + ny * 0} ${bx + nx * 8},${by + ny * 8} ${bx - nx * 8},${by - ny * 8}`);
+        a.e.style.opacity = S.V > 0 ? 1 : 0;
+      });
     }
     let alive = true, last = performance.now();
     (function fr(t) {
       if (!alive) return;
       const dt = Math.min(0.1, (t - last) / 1000); last = t;
-      const sp = (S.V / 12) * 140 * (S.view === "conv" ? 1 : -1);
-      dots.forEach((d) => { d.s += sp * dt; const [x, y] = pt(d.s); d.e.setAttribute("cx", x); d.e.setAttribute("cy", y); });
-      const dir = S.view === "conv" ? 1 : -1;
-      arrow.setAttribute("points", dir > 0 ? "330,92 318,86 318,98" : "270,92 282,86 282,98");
-      arrow.style.opacity = S.V > 0 ? 1 : 0;
+      const sp = (S.V / 12) * 160 * (S.view === "conv" ? 1 : -1);
+      dots.forEach((d) => { d.s += sp * dt; const p = at(d.s); d.e.setAttribute("cx", p.x.toFixed(1)); d.e.setAttribute("cy", p.y.toFixed(1)); });
       requestAnimationFrame(fr);
     })(last);
     upd();
