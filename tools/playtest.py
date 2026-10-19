@@ -4,6 +4,7 @@ import asyncio,sys,json
 from playwright.async_api import async_playwright
 sp=sys.argv[1] if len(sys.argv)>1 else '.'
 BASE=sys.argv[2] if len(sys.argv)>2 else 'http://localhost:8765/'
+LANGS=(sys.argv[3].split(',') if len(sys.argv)>3 else ['he','en'])
 SOL={
  '0-1':{'g':[[('V',6)],[('view','elec')],[('b',1)],[('value',0.0047)]],'c':25},
  '0-2':{'g':[[('S1','on',True)],[('S1','on',False)],[('S1','on',True),('S2','on',True)],[('S1','on',False),('S1','on',True)]],'c':[('S1','on',True),('S3','on',True),('S2','on',False)]},
@@ -22,35 +23,34 @@ async def main():
     async with async_playwright() as p:
         b=await p.chromium.launch();pg=await b.new_page(viewport={'width':1300,'height':800})
         errs=[];pg.on('pageerror',lambda e:errs.append(str(e)))
-        await pg.goto(BASE);await pg.evaluate("localStorage.clear()");await pg.reload();await pg.wait_for_timeout(500)
-        for lv,sol in SOL.items():
-            await pg.click('.lv.open');await pg.wait_for_timeout(300)
-            # demo
-            while True:
-                btns=await pg.locator('.panel-foot .btn.pri').all_text_contents()
-                await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(150)
-                if 'לתרגול' in btns[0]: break
-            for i,ops in enumerate(sol['g']):
-                await apply(pg,ops);await pg.wait_for_timeout(450)
-                dis=await pg.locator('.panel-foot .btn.pri').get_attribute('disabled')
-                if dis is not None: print('FAIL guided',lv,i); await pg.screenshot(path=f'{sp}/fail_{lv}_{i}.png'); break
+        for LANG in LANGS:
+            print('== language', LANG)
+            await pg.goto(BASE);await pg.evaluate(f"localStorage.clear();localStorage.setItem('cr.v1',JSON.stringify({{lang:'{LANG}'}}))");await pg.reload();await pg.wait_for_timeout(500)
+            for lv,sol in SOL.items():
+                await pg.click('.lv.open');await pg.wait_for_timeout(300)
+                while await pg.evaluate("document.querySelectorAll('.step')[0].classList.contains('on')"):
+                    await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(150)
+                failed=False
+                for i,ops in enumerate(sol['g']):
+                    await apply(pg,ops);await pg.wait_for_timeout(450)
+                    dis=await pg.locator('.panel-foot .btn.pri').get_attribute('disabled')
+                    if dis is not None: print('FAIL guided',lv,i); await pg.screenshot(path=f'{sp}/fail_{LANG}_{lv}_{i}.png'); failed=True; break
+                    await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(250)
+                if failed: break
+                c=sol['c']
+                if isinstance(c,(int,float)): await pg.fill('.num',str(c))
+                else: await apply(pg,c)
                 await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(250)
-            c=sol['c']
-            if isinstance(c,(int,float)): await pg.fill('.num',str(c))
-            else: await apply(pg,c)
-            await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(250)
-            ok=await pg.locator('.fb.ok').count()
-            if not ok: print('FAIL challenge',lv); await pg.screenshot(path=f'{sp}/failc_{lv}.png'); continue
-            await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(250)
-            quiz=await pg.evaluate(f"CR.LEVELS.find(l=>l.id=='{lv}').quiz.map(q=>q.a)")
-            for a in quiz:
-                await pg.locator('.opt').nth(a).click();await pg.wait_for_timeout(80)
-                await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(120)
-            sc=await pg.text_content('.score')
-            done=await pg.evaluate(f"!!CR.P.done['{lv}']")
-            print(lv,'score',sc,'done',done)
-            if lv=='0-6': await pg.screenshot(path=f'{sp}/final.png')
-            await pg.evaluate("CR.showMap()");await pg.wait_for_timeout(200)
-        await pg.screenshot(path=f'{sp}/map_after.png')
+                if not await pg.locator('.fb.ok').count(): print('FAIL challenge',lv); await pg.screenshot(path=f'{sp}/failc_{LANG}_{lv}.png'); break
+                await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(250)
+                quiz=await pg.evaluate(f"CR.LEVELS.find(l=>l.id=='{lv}').quiz.map(q=>q.a)")
+                for a in quiz:
+                    await pg.locator('.opt').nth(a).click();await pg.wait_for_timeout(80)
+                    await pg.click('.panel-foot .btn.pri');await pg.wait_for_timeout(120)
+                sc=await pg.text_content('.score')
+                done=await pg.evaluate(f"!!CR.P.done['{lv}']")
+                print(lv,'score',sc,'done',done)
+                await pg.evaluate("CR.showMap()");await pg.wait_for_timeout(200)
+            await pg.screenshot(path=f'{sp}/map_after_{LANG}.png')
         print('errors',errs);await b.close()
 asyncio.run(main())

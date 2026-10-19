@@ -49,6 +49,7 @@ button{font-family:inherit;color:inherit}
 .bar-r{display:flex;gap:6px}
 .icon-btn{all:unset;cursor:pointer;width:38px;height:38px;display:grid;place-items:center;border-radius:10px;border:1px solid var(--line2);background:var(--panel);font-size:1.05rem}
 .icon-btn:hover{border-color:var(--acc)}
+.lang-btn{font:800 .85rem var(--sans);color:var(--acc2)}
 
 /* map */
 .map,.enc{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:16px}
@@ -130,7 +131,7 @@ button{font-family:inherit;color:inherit}
 .card-t{flex:1;font-size:1.3rem;font-weight:800;color:var(--acc2)}
 .card-sym{font:700 1rem var(--mono);color:var(--muted);margin-inline-start:6px}
 .sheet-body{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:12px 16px 18px}
-.card-en{color:var(--muted);font-family:var(--mono);font-size:.9rem;text-align:right}
+.card-en{color:var(--muted);font-family:var(--mono);font-size:.9rem;text-align:start}
 .card-def{font-size:1.08rem;line-height:1.7;margin:8px 0 12px}
 .card-demo{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--stagebg)}
 .card-cap{padding:8px 11px;font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);background:var(--panel2)}
@@ -144,7 +145,7 @@ button{font-family:inherit;color:inherit}
 
 /* widgets */
 .w-circuit{flex:1;min-height:0;display:flex;flex-direction:column}
-.w-reads{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:8px 8px 0;direction:rtl}
+.w-reads{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:8px 8px 0}
 .w-read{display:flex;align-items:baseline;gap:6px;padding:4px 10px;border-radius:8px;background:var(--panel2);border:1px solid var(--line2);font-size:.85rem}
 .w-read-l{color:var(--muted);font-weight:700}
 .w-read b{font:800 1.05rem var(--mono);direction:ltr;color:var(--gold2)}
@@ -172,6 +173,7 @@ button{font-family:inherit;color:inherit}
 .w-meterL{fill:var(--acc2);font:800 15px var(--mono)}
 .w-lab{fill:var(--text);font:700 16px var(--font)}
 .w-val{fill:var(--gold2);font:800 16px var(--mono)}
+.w-small{font-size:14px}
 .w-node{fill:var(--gold2)}
 .w-arrow{fill:var(--part)}
 .w-big{fill:var(--text);font:800 34px var(--mono)}
@@ -207,9 +209,10 @@ button{font-family:inherit;color:inherit}
 <body>
 <div id="app"></div>
 <noscript>המשחק דורש JavaScript.</noscript>
-<script src="js/concepts.js?v=202610191709"></script>
-<script src="js/widgets.js?v=202610191709"></script>
-<script src="js/world0.js?v=202610191709"></script>
-<script src="js/engine.js?v=202610191709"></script>
+<script src="js/concepts.js?v=202610192057"></script>
+<script src="js/widgets.js?v=202610192057"></script>
+<script src="js/world0.js?v=202610192057"></script>
+<script src="js/world0.en.js?v=202610192057"></script>
+<script src="js/engine.js?v=202610192057"></script>
 </body>
 </html>

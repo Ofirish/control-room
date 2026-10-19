@@ -1,5 +1,5 @@
 {
- "schema": "control-room-game/concepts v1",
+ "schema": "control-room-game/concepts v2 (he + en)",
  "rule": "No concept may appear in a level before it is introduced. Every prerequisite is introduced earlier in this list. Every concept needs an explanation card and a live demo.",
  "card_fields": [
   "id",
@@ -9,307 +9,379 @@
   "en",
   "symbol",
   "unit",
+  "unit_en",
   "requires",
   "definition",
+  "definition_en",
   "demo",
+  "demo_en",
   "used_by"
  ],
  "worlds": [
   {
    "id": 0,
    "title": "יסודות חשמל",
+   "title_en": "Electricity basics",
    "levels": [
     {
      "id": 1,
-     "title": "מטען, זרם ומתח"
+     "title": "מטען, זרם ומתח",
+     "title_en": "Charge, current and voltage"
     },
     {
      "id": 2,
-     "title": "מעגל סגור"
+     "title": "מעגל סגור",
+     "title_en": "The closed circuit"
     },
     {
      "id": 3,
-     "title": "התנגדות וחוק אוהם"
+     "title": "התנגדות וחוק אוהם",
+     "title_en": "Resistance and Ohm's law"
     },
     {
      "id": 4,
-     "title": "הספק ואנרגיה"
+     "title": "הספק ואנרגיה",
+     "title_en": "Power and energy"
     },
     {
      "id": 5,
-     "title": "טורי ומקבילי"
+     "title": "טורי ומקבילי",
+     "title_en": "Series and parallel"
     },
     {
      "id": 6,
-     "title": "מחלק מתח ופוטנציומטר"
+     "title": "מחלק מתח ופוטנציומטר",
+     "title_en": "Voltage divider and potentiometer"
     }
    ]
   },
   {
    "id": 1,
    "title": "רכיבים",
+   "title_en": "Components",
    "levels": [
     {
      "id": 1,
-     "title": "אות, גרף בזמן וקצב שינוי"
+     "title": "אות, גרף בזמן וקצב שינוי",
+     "title_en": "Signal, time plot and rate of change"
     },
     {
      "id": 2,
-     "title": "הקבל"
+     "title": "הקבל",
+     "title_en": "The capacitor"
     },
     {
      "id": 3,
-     "title": "קבוע הזמן τ"
+     "title": "קבוע הזמן τ",
+     "title_en": "The time constant τ"
     },
     {
      "id": 4,
-     "title": "הסליל"
+     "title": "הסליל",
+     "title_en": "The inductor"
     },
     {
      "id": 5,
-     "title": "הדיודה"
+     "title": "הדיודה",
+     "title_en": "The diode"
     },
     {
      "id": 6,
-     "title": "הטרנזיסטור כמתג"
+     "title": "הטרנזיסטור כמתג",
+     "title_en": "The transistor as a switch"
     },
     {
      "id": 7,
-     "title": "הממסר"
+     "title": "הממסר",
+     "title_en": "The relay"
     },
     {
      "id": 8,
-     "title": "מגבר השרת כמשווה"
+     "title": "מגבר השרת כמשווה",
+     "title_en": "The op-amp as a comparator"
     },
     {
      "id": 9,
-     "title": "מגבר השרת כמגבר"
+     "title": "מגבר השרת כמגבר",
+     "title_en": "The op-amp as an amplifier"
     }
    ]
   },
   {
    "id": 2,
    "title": "חיישנים ואקטואטורים",
+   "title_en": "Sensors and actuators",
    "levels": [
     {
      "id": 1,
-     "title": "חיישנים"
+     "title": "חיישנים",
+     "title_en": "Sensors"
     },
     {
      "id": 2,
-     "title": "חיישני טמפרטורה"
+     "title": "חיישני טמפרטורה",
+     "title_en": "Temperature sensors"
     },
     {
      "id": 3,
-     "title": "חיישני מיקום ומצב"
+     "title": "חיישני מיקום ומצב",
+     "title_en": "Position and state sensors"
     },
     {
      "id": 4,
-     "title": "אקטואטורים"
+     "title": "אקטואטורים",
+     "title_en": "Actuators"
     },
     {
      "id": 5,
-     "title": "גבולות פיזיקליים"
+     "title": "גבולות פיזיקליים",
+     "title_en": "Physical limits"
     }
    ]
   },
   {
    "id": 3,
    "title": "אותות",
+   "title_en": "Signals",
    "levels": [
     {
      "id": 1,
-     "title": "אנלוגי ודיגיטלי"
+     "title": "אנלוגי ודיגיטלי",
+     "title_en": "Analog and digital"
     },
     {
      "id": 2,
-     "title": "תדר ומחזור"
+     "title": "תדר ומחזור",
+     "title_en": "Frequency and period"
     },
     {
      "id": 3,
-     "title": "רעש וסינון"
+     "title": "רעש וסינון",
+     "title_en": "Noise and filtering"
     },
     {
      "id": 4,
-     "title": "תקשורת תעשייתית"
+     "title": "תקשורת תעשייתית",
+     "title_en": "Industrial signalling"
     },
     {
      "id": 5,
-     "title": "דגימה והמרה"
+     "title": "דגימה והמרה",
+     "title_en": "Sampling and conversion"
     }
    ]
   },
   {
    "id": 4,
    "title": "מושגי בקרה",
+   "title_en": "Control concepts",
    "levels": [
     {
      "id": 1,
-     "title": "מהי מערכת בקרה"
+     "title": "מהי מערכת בקרה",
+     "title_en": "What is a control system"
     },
     {
      "id": 2,
-     "title": "SP, PV, MV"
+     "title": "SP, PV, MV",
+     "title_en": "SP, PV, MV"
     },
     {
      "id": 3,
-     "title": "שגיאה והפרעה"
+     "title": "שגיאה והפרעה",
+     "title_en": "Error and disturbance"
     },
     {
      "id": 4,
-     "title": "חוג פתוח וחוג סגור"
+     "title": "חוג פתוח וחוג סגור",
+     "title_en": "Open loop and closed loop"
     },
     {
      "id": 5,
-     "title": "משוב שלילי וחיובי"
+     "title": "משוב שלילי וחיובי",
+     "title_en": "Negative and positive feedback"
     },
     {
      "id": 6,
-     "title": "דיאגרמת בלוקים"
+     "title": "דיאגרמת בלוקים",
+     "title_en": "Block diagrams"
     },
     {
      "id": 7,
-     "title": "מצב מעבר ומצב יציב"
+     "title": "מצב מעבר ומצב יציב",
+     "title_en": "Transient and steady state"
     }
    ]
   },
   {
    "id": 5,
    "title": "בקרת On/Off",
+   "title_en": "On/Off control",
    "levels": [
     {
      "id": 1,
-     "title": "בקר On/Off בסיסי"
+     "title": "בקר On/Off בסיסי",
+     "title_en": "Basic On/Off controller"
     },
     {
      "id": 2,
-     "title": "היסטרזיס ו-Schmitt"
+     "title": "היסטרזיס ו-Schmitt",
+     "title_en": "Hysteresis and the Schmitt trigger"
     },
     {
      "id": 3,
-     "title": "מחזור גבול ובלאי"
+     "title": "מחזור גבול ובלאי",
+     "title_en": "Limit cycle and wear"
     },
     {
      "id": 4,
-     "title": "בוס: הטרמוסטט המלא"
+     "title": "בוס: הטרמוסטט המלא",
+     "title_en": "Boss: the complete thermostat"
     }
    ]
   },
   {
    "id": 6,
    "title": "מודלים של תהליך",
+   "title_en": "Process models",
    "levels": [
     {
      "id": 1,
-     "title": "מודל ותהליך מסדר ראשון"
+     "title": "מודל ותהליך מסדר ראשון",
+     "title_en": "Models and first-order processes"
     },
     {
      "id": 2,
-     "title": "זמן מת"
+     "title": "זמן מת",
+     "title_en": "Dead time"
     },
     {
      "id": 3,
-     "title": "מדדי תגובת מדרגה"
+     "title": "מדדי תגובת מדרגה",
+     "title_en": "Step-response metrics"
     },
     {
      "id": 4,
-     "title": "מסדר שני"
+     "title": "מסדר שני",
+     "title_en": "Second order"
     },
     {
      "id": 5,
-     "title": "פונקציית תמסורת, קטבים ויציבות"
+     "title": "פונקציית תמסורת, קטבים ויציבות",
+     "title_en": "Transfer functions, poles and stability"
     }
    ]
   },
   {
    "id": 7,
    "title": "בקרי PID",
+   "title_en": "PID controllers",
    "levels": [
     {
      "id": 1,
-     "title": "בקר P"
+     "title": "בקר P",
+     "title_en": "P controller"
     },
     {
      "id": 2,
-     "title": "בקר I"
+     "title": "בקר I",
+     "title_en": "I controller"
     },
     {
      "id": 3,
-     "title": "Windup"
+     "title": "Windup",
+     "title_en": "Windup"
     },
     {
      "id": 4,
-     "title": "בקר D"
+     "title": "בקר D",
+     "title_en": "D controller"
     },
     {
      "id": 5,
-     "title": "PID וכוונון"
+     "title": "PID וכוונון",
+     "title_en": "PID and tuning"
     }
    ]
   },
   {
    "id": 8,
    "title": "יציבות ותחום התדר",
+   "title_en": "Stability and frequency domain",
    "levels": [
     {
      "id": 1,
-     "title": "תגובת תדר ו-Bode"
+     "title": "תגובת תדר ו-Bode",
+     "title_en": "Frequency response and Bode"
     },
     {
      "id": 2,
-     "title": "מרווחי יציבות"
+     "title": "מרווחי יציבות",
+     "title_en": "Stability margins"
     },
     {
      "id": 3,
-     "title": "מקום גיאומטרי של שורשים"
+     "title": "מקום גיאומטרי של שורשים",
+     "title_en": "Root locus"
     }
    ]
   },
   {
    "id": 9,
    "title": "בקרה דיגיטלית ו-PLC",
+   "title_en": "Digital control and PLC",
    "levels": [
     {
      "id": 1,
-     "title": "ה-PLC"
+     "title": "ה-PLC",
+     "title_en": "The PLC"
     },
     {
      "id": 2,
-     "title": "לוגיקה בוליאנית"
+     "title": "לוגיקה בוליאנית",
+     "title_en": "Boolean logic"
     },
     {
      "id": 3,
-     "title": "שפת סולם"
+     "title": "שפת סולם",
+     "title_en": "Ladder logic"
     },
     {
      "id": 4,
-     "title": "טיימרים ומונים"
+     "title": "טיימרים ומונים",
+     "title_en": "Timers and counters"
     },
     {
      "id": 5,
-     "title": "PID דיגיטלי"
+     "title": "PID דיגיטלי",
+     "title_en": "Digital PID"
     }
    ]
   },
   {
    "id": 10,
    "title": "מערכות מורכבות ובטיחות",
+   "title_en": "Complex systems and safety",
    "levels": [
     {
      "id": 1,
-     "title": "בקרת מפל"
+     "title": "בקרת מפל",
+     "title_en": "Cascade control"
     },
     {
      "id": 2,
-     "title": "הזנה קדימה ויחס"
+     "title": "הזנה קדימה ויחס",
+     "title_en": "Feedforward and ratio"
     },
     {
      "id": 3,
-     "title": "התראות ואינטרלוקים"
+     "title": "התראות ואינטרלוקים",
+     "title_en": "Alarms and interlocks"
     },
     {
      "id": 4,
-     "title": "מערכות בטיחות"
+     "title": "מערכות בטיחות",
+     "title_en": "Safety systems"
     }
    ]
   }
@@ -323,9 +395,12 @@
    "en": "Electric charge",
    "symbol": "Q",
    "unit": "C (קולון)",
+   "unit_en": "C (coulomb)",
    "requires": [],
    "definition": "תכונה בסיסית של חומר שיכולה להיות חיובית (+) או שלילית (−). מטענים זהים דוחים זה את זה, ומטענים הפוכים נמשכים.",
+   "definition_en": "A basic property of matter that can be positive (+) or negative (−). Like charges repel each other; opposite charges attract.",
    "demo": "שני כדורים טעונים: משנים סימן ורואים משיכה או דחייה.",
+   "demo_en": "Two charged balls: flip a sign and watch them attract or repel.",
    "used_by": [
     "electron",
     "current",
@@ -341,11 +416,14 @@
    "en": "Electron",
    "symbol": "e⁻",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "charge"
    ],
    "definition": "חלקיק זעיר בעל מטען שלילי. במתכות אלקטרונים יכולים לנוע בחופשיות, ותנועתם היא מה שיוצר זרם.",
+   "definition_en": "A tiny particle with a negative charge. In metals, electrons can move freely, and their movement is what makes a current.",
    "demo": "חוט מתכת מוגדל: אלקטרונים חופשיים נעים בין האטומים.",
+   "demo_en": "A magnified metal wire: free electrons drifting between the atoms.",
    "used_by": [
     "current"
    ]
@@ -358,12 +436,15 @@
    "en": "Electric current",
    "symbol": "I",
    "unit": "A (אמפר)",
+   "unit_en": "A (ampere)",
    "requires": [
     "charge",
     "electron"
    ],
    "definition": "קצב תנועת המטען דרך נקודה במעגל: כמה מטען עובר בכל שנייה. I = Q/t.",
+   "definition_en": "The rate at which charge moves past a point in the circuit: how much charge passes each second. I = Q/t.",
    "demo": "חלקיקים זורמים בחוט; מגדילים את הקצב ומד הזרם עולה.",
+   "demo_en": "Particles flow through a wire; speed them up and the ammeter rises.",
    "used_by": [
     "conventional_current",
     "ammeter",
@@ -387,11 +468,14 @@
    "en": "Voltage",
    "symbol": "V",
    "unit": "V (וולט)",
+   "unit_en": "V (volt)",
    "requires": [
     "charge"
    ],
    "definition": "הפרש ה'לחץ' החשמלי בין שתי נקודות, שדוחף מטען לזרום. נמדד תמיד בין שתי נקודות.",
+   "definition_en": "The electrical 'pressure' difference between two points that pushes charge to flow. Always measured between two points.",
    "demo": "אנלוגיית מים: הפרש גובה בין שני מיכלים קובע כמה חזק המים נדחפים.",
+   "demo_en": "Water analogy: the height difference between two tanks sets how hard the water is pushed.",
    "used_by": [
     "conventional_current",
     "voltmeter",
@@ -417,12 +501,15 @@
    "en": "Conventional current",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current",
     "voltage"
    ],
    "definition": "המוסכמה לפיה זרם זורם מההדק החיובי (+) אל השלילי (−), הפוך לכיוון תנועת האלקטרונים.",
+   "definition_en": "The convention that current flows from the positive terminal (+) to the negative (−), opposite to the way electrons actually move.",
    "demo": "לחצן שמחליף בין תצוגת אלקטרונים לתצוגת זרם קונבנציונלי על אותו מעגל.",
+   "demo_en": "A button that switches the same circuit between an electron view and a conventional-current view.",
    "used_by": [
     "diode"
    ]
@@ -435,11 +522,14 @@
    "en": "Ammeter",
    "symbol": "A",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current"
    ],
    "definition": "מכשיר שמודד זרם. מחברים אותו בתוך המסלול, כך שכל הזרם עובר דרכו.",
+   "definition_en": "An instrument that measures current. It is connected inside the path, so all the current passes through it.",
    "demo": "מד זרם על חוט: מגבירים את הזרימה והמחוג עולה.",
+   "demo_en": "An ammeter on a wire: increase the flow and the reading goes up.",
    "used_by": []
   },
   {
@@ -450,11 +540,14 @@
    "en": "Voltmeter",
    "symbol": "V",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage"
    ],
    "definition": "מכשיר שמודד מתח בין שתי נקודות. מחברים את שני החוטים שלו לשתי הנקודות, בלי לפרק שום חיבור.",
+   "definition_en": "An instrument that measures the voltage between two points. Its two leads touch the two points without breaking any connection.",
    "demo": "מצמידים את שני החוטים של המד לשני קצוות ורואים את המתח ביניהם.",
+   "demo_en": "Touch the meter's two leads to two ends and read the voltage between them.",
    "used_by": []
   },
   {
@@ -465,9 +558,12 @@
    "en": "SI prefixes",
    "symbol": "k, m, µ, n, M",
    "unit": "",
+   "unit_en": "",
    "requires": [],
    "definition": "קיצורים לכפולות של 10: k = אלף, M = מיליון, m = אלפית, µ = מיליונית, n = מיליארדית.",
+   "definition_en": "Short names for powers of 10: k = thousand, M = million, m = thousandth, µ = millionth, n = billionth.",
    "demo": "סליידר שממיר 4700 Ω ↔ 4.7 kΩ ו-0.0001 F ↔ 100 µF.",
+   "demo_en": "A slider that converts 4700 Ω ↔ 4.7 kΩ and 0.0001 F ↔ 100 µF.",
    "used_by": [
     "capacitance"
    ]
@@ -480,11 +576,14 @@
    "en": "Terminal",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage"
    ],
    "definition": "נקודת החיבור של רכיב, שאליה מחברים חוט. לרוב רכיבים יש שני הדקים.",
+   "definition_en": "The connection point of a component, where a wire is attached. Most components have two terminals.",
    "demo": "לחיצה על רכיב מדגישה את ההדקים שלו.",
+   "demo_en": "Tap a component to highlight its terminals.",
    "used_by": [
     "voltage_source"
    ]
@@ -497,12 +596,15 @@
    "en": "Voltage source",
    "symbol": "V_S",
    "unit": "V",
+   "unit_en": "V",
    "requires": [
     "voltage",
     "terminal"
    ],
    "definition": "רכיב ששומר על מתח קבוע בין שני הדקיו: הדק חיובי (+) והדק שלילי (−). למשל סוללה או ספק כוח.",
+   "definition_en": "A component that keeps a constant voltage between its two terminals: a positive one (+) and a negative one (−). For example a battery or a power supply.",
    "demo": "סוללה עם מד מתח; מחליפים סוללות ורואים את המתח.",
+   "demo_en": "A battery with a voltmeter; swap batteries and watch the voltage.",
    "used_by": [
     "circuit",
     "opamp"
@@ -516,12 +618,15 @@
    "en": "Closed circuit",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current",
     "voltage_source"
    ],
    "definition": "מסלול רציף שבו הזרם יוצא מהמקור, עובר ברכיבים וחוזר אליו. בלי מסלול סגור אין זרם.",
+   "definition_en": "A continuous path in which current leaves the source, passes through the components and returns to it. Without a closed path there is no current.",
    "demo": "מנורה ומקור: מנתקים חוט אחד והמנורה כבה.",
+   "demo_en": "A lamp and a source: disconnect one wire and the lamp goes out.",
    "used_by": [
     "lamp",
     "switch",
@@ -540,11 +645,14 @@
    "en": "Lamp",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit"
    ],
    "definition": "רכיב שהופך זרם חשמלי לאור. ככל שעובר בה יותר זרם, היא מאירה חזק יותר.",
+   "definition_en": "A component that turns electric current into light. The more current through it, the brighter it glows.",
    "demo": "מגבירים את מתח המקור והנורה מאירה חזק יותר.",
+   "demo_en": "Raise the source voltage and the lamp glows brighter.",
    "used_by": [
     "load"
    ]
@@ -557,11 +665,14 @@
    "en": "Load",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "lamp"
    ],
    "definition": "כל רכיב שצורך חשמל מהמקור ועושה איתו משהו, למשל נורה או כל מכשיר חשמלי.",
+   "definition_en": "Any component that draws electricity from the source and does something with it, for example a lamp or any electrical device.",
    "demo": "מחליפים את העומס במעגל: נורה, ואחר כך משהו אחר שצורך חשמל.",
+   "demo_en": "Swap the load in the circuit: a lamp, then something else that uses electricity.",
    "used_by": []
   },
   {
@@ -572,11 +683,14 @@
    "en": "Switch",
    "symbol": "SW",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit"
    ],
    "definition": "רכיב שפותח או סוגר את המעגל. פתוח = אין זרם, סגור = זרם יכול לזרום.",
+   "definition_en": "A component that opens or closes the circuit. Open = no current, closed = current can flow.",
    "demo": "לחיצה על מתג ורואים את הזרם מתחיל ונעצר.",
+   "demo_en": "Tap a switch and watch the current start and stop.",
    "used_by": [
     "open_circuit",
     "relay",
@@ -591,12 +705,15 @@
    "en": "Open circuit",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit",
     "switch"
    ],
    "definition": "מעגל שבו המסלול קטוע. הזרם אפס, אבל מתח עדיין יכול להופיע על נקודת הנתק.",
+   "definition_en": "A circuit whose path is broken. The current is zero, but a voltage can still appear across the break.",
    "demo": "מד מתח על מתג פתוח מראה את כל מתח המקור.",
+   "demo_en": "A voltmeter across an open switch shows the full source voltage.",
    "used_by": []
   },
   {
@@ -607,11 +724,14 @@
    "en": "Short circuit",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit"
    ],
    "definition": "חיבור ישיר בחוט בין שני הדקי המקור, בלי שום רכיב באמצע. הזרם עולה מאוד ועלול לגרום נזק.",
+   "definition_en": "A direct wire between the two source terminals, with no component in between. The current rises sharply and can cause damage.",
    "demo": "חוט עוקף את המנורה: המנורה כבה והזרם במקור מזנק.",
+   "demo_en": "A wire bypasses the lamp: the lamp goes out and the source current jumps.",
    "used_by": []
   },
   {
@@ -622,11 +742,14 @@
    "en": "Node",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit"
    ],
    "definition": "נקודה במעגל שבה מתחברים שניים או יותר רכיבים. לכל הנקודות בצומת אותו מתח.",
+   "definition_en": "A point in the circuit where two or more components connect. Every point of a node has the same voltage.",
    "demo": "לוחצים על צומת ורואים שכל החוטים שבו באותו צבע מתח.",
+   "demo_en": "Tap a node and see that all its wires have the same voltage colour.",
    "used_by": [
     "ground",
     "parallel",
@@ -641,12 +764,15 @@
    "en": "Ground (GND)",
    "symbol": "GND",
    "unit": "0 V",
+   "unit_en": "0 V",
    "requires": [
     "voltage",
     "node"
    ],
    "definition": "הצומת שמוגדר כ-0 V. כל המתחים במעגל נמדדים יחסית אליו.",
+   "definition_en": "The node defined as 0 V. All voltages in the circuit are measured relative to it.",
    "demo": "מזיזים את סמל האדמה וכל ערכי המתח מתעדכנים יחסית אליו.",
+   "demo_en": "Move the ground symbol and every voltage value updates relative to it.",
    "used_by": [
     "voltage_divider"
    ]
@@ -659,12 +785,15 @@
    "en": "Resistance",
    "symbol": "R",
    "unit": "Ω (אוהם)",
+   "unit_en": "Ω (ohm)",
    "requires": [
     "current",
     "voltage"
    ],
    "definition": "מידת ההתנגדות של חומר למעבר זרם. התנגדות גבוהה = פחות זרם לאותו מתח.",
+   "definition_en": "How much a material opposes the flow of current. Higher resistance = less current for the same voltage.",
    "demo": "צינור צר מול צינור רחב באנלוגיית המים.",
+   "demo_en": "A narrow pipe versus a wide pipe in the water analogy.",
    "used_by": [
     "resistor",
     "ohms_law",
@@ -679,11 +808,14 @@
    "en": "Resistor",
    "symbol": "R",
    "unit": "Ω",
+   "unit_en": "Ω",
    "requires": [
     "resistance"
    ],
    "definition": "רכיב בעל התנגדות קבועה וידועה. משמש להגבלת זרם ולחלוקת מתח.",
+   "definition_en": "A component with a fixed, known resistance. Used to limit current and to divide voltage.",
    "demo": "מחליפים נגד במעגל ורואים את הזרם משתנה.",
+   "demo_en": "Swap a resistor in the circuit and watch the current change.",
    "used_by": [
     "series",
     "parallel",
@@ -699,13 +831,16 @@
    "en": "Ohm's law",
    "symbol": "V = I·R",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage",
     "current",
     "resistance"
    ],
    "definition": "הקשר בין מתח, זרם והתנגדות: V = I·R. אם יודעים שניים, מחשבים את השלישי.",
+   "definition_en": "The relationship between voltage, current and resistance: V = I·R. Know any two and you can calculate the third.",
    "demo": "משולש אוהם אינטראקטיבי: מכסים גודל אחד ומקבלים את נוסחתו.",
+   "demo_en": "An interactive Ohm triangle: cover one quantity to get its formula.",
    "used_by": [
     "power",
     "voltage_divider",
@@ -720,13 +855,16 @@
    "en": "Power",
    "symbol": "P",
    "unit": "W (וואט)",
+   "unit_en": "W (watt)",
    "requires": [
     "voltage",
     "current",
     "ohms_law"
    ],
    "definition": "קצב צריכת או מסירת אנרגיה: P = V·I = I²·R. בנגד ההספק הופך לחום.",
+   "definition_en": "The rate at which energy is used or delivered: P = V·I = I²·R. In a resistor the power becomes heat.",
    "demo": "נגד שמתחמם ומשנה צבע ככל שההספק עולה.",
+   "demo_en": "A resistor that heats up and changes colour as the power rises.",
    "used_by": [
     "energy",
     "actuator",
@@ -741,11 +879,14 @@
    "en": "Energy",
    "symbol": "E",
    "unit": "J (ג'אול)",
+   "unit_en": "J (joule)",
    "requires": [
     "power"
    ],
    "definition": "כמות העבודה שבוצעה: הספק כפול זמן. E = P·t.",
+   "definition_en": "The amount of work done: power multiplied by time. E = P·t.",
    "demo": "סכום אנרגיה שמצטבר כל זמן שמנורה דולקת.",
+   "demo_en": "An energy total that keeps adding up while a lamp is on.",
    "used_by": [
     "capacitor_energy"
    ]
@@ -758,12 +899,15 @@
    "en": "Series connection",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "resistor",
     "circuit"
    ],
    "definition": "רכיבים אחד אחרי השני במסלול יחיד. אותו זרם עובר בכולם; ההתנגדויות מתחברות: R = R1 + R2.",
+   "definition_en": "Components one after another on a single path. The same current flows through all of them; resistances add: R = R1 + R2.",
    "demo": "מוסיפים נגד בטור והזרם יורד.",
+   "demo_en": "Add a resistor in series and the current drops.",
    "used_by": [
     "kvl",
     "voltage_divider"
@@ -777,12 +921,15 @@
    "en": "Parallel connection",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "resistor",
     "node"
    ],
    "definition": "רכיבים שמחוברים לאותם שני צמתים. אותו מתח על כולם; הזרם מתפצל ביניהם.",
+   "definition_en": "Components connected to the same two nodes. They all have the same voltage; the current splits between them.",
    "demo": "מוסיפים נגד במקביל והזרם הכולל עולה.",
+   "demo_en": "Add a resistor in parallel and the total current rises.",
    "used_by": [
     "kcl"
    ]
@@ -795,12 +942,15 @@
    "en": "Kirchhoff's voltage law (KVL)",
    "symbol": "ΣV = 0",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "series",
     "voltage"
    ],
    "definition": "סכום המתחים סביב כל לולאה סגורה הוא אפס: מה שהמקור נותן, הרכיבים 'צורכים'.",
+   "definition_en": "The sum of the voltages around any complete loop of the circuit is zero: what the source gives, the components 'use up'.",
    "demo": "לולאה עם מדי מתח שהסכום שלהם מוצג תמיד כאפס.",
+   "demo_en": "A loop with voltmeters whose sum always shows zero.",
    "used_by": [
     "voltage_divider"
    ]
@@ -813,12 +963,15 @@
    "en": "Kirchhoff's current law (KCL)",
    "symbol": "ΣI = 0",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "parallel",
     "current"
    ],
    "definition": "סך הזרם שנכנס לצומת שווה לסך הזרם שיוצא ממנו. מטען לא נעלם.",
+   "definition_en": "The total current entering a node equals the total current leaving it. Charge does not disappear.",
    "demo": "צומת עם חצי זרם: נכנס 3 mA, יוצאים 1 + 2 mA.",
+   "demo_en": "A node with current arrows: 3 mA in, 1 + 2 mA out.",
    "used_by": []
   },
   {
@@ -829,6 +982,7 @@
    "en": "Voltage divider",
    "symbol": "V_out = V_in·R2/(R1+R2)",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "series",
     "ohms_law",
@@ -836,7 +990,9 @@
     "ground"
    ],
    "definition": "שני נגדים בטור; המתח בצומת שביניהם הוא חלק קבוע ממתח המקור, לפי יחס הנגדים.",
+   "definition_en": "Two resistors in series; the voltage at the node between them is a fixed fraction of the source voltage, set by the resistor ratio.",
    "demo": "שני סליידרים ל-R1 ול-R2 ומד מתח בצומת האמצעי.",
+   "demo_en": "Two sliders for R1 and R2 and a voltmeter on the middle node.",
    "used_by": [
     "potentiometer",
     "noninverting_amp",
@@ -851,11 +1007,14 @@
    "en": "Potentiometer",
    "symbol": "RV",
    "unit": "Ω",
+   "unit_en": "Ω",
    "requires": [
     "voltage_divider"
    ],
    "definition": "נגד עם גררה (Wiper) נעה. הוא מחלק מתח שאפשר לשנות: הזזת הגררה משנה את מתח המוצא.",
+   "definition_en": "A resistor with a moving wiper. It is an adjustable voltage divider: moving the wiper changes the output voltage.",
    "demo": "כפתור מסתובב והמתח בגררה משתנה בין 0 ל-V_S.",
+   "demo_en": "A knob that turns and the wiper voltage changes between 0 and V_S.",
    "used_by": [
     "reference_voltage",
     "position_sensor"
@@ -869,11 +1028,14 @@
    "en": "Time plot",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage"
    ],
    "definition": "גרף שבו הציר האופקי הוא זמן והאנכי הוא גודל (למשל מתח). מראה איך דבר משתנה לאורך הזמן.",
+   "definition_en": "A graph whose horizontal axis is time and whose vertical axis is a quantity (for example voltage). It shows how something changes over time.",
    "demo": "מזיזים סליידר ידנית ורואים את הקו נרשם בגרף.",
+   "demo_en": "Move a slider by hand and watch the line being drawn.",
    "used_by": [
     "signal",
     "rate_of_change",
@@ -889,12 +1051,15 @@
    "en": "Signal",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage",
     "time_graph"
    ],
    "definition": "גודל חשמלי שנושא מידע ומשתנה בזמן, למשל מתח שמייצג טמפרטורה.",
+   "definition_en": "An electrical quantity that carries information and changes over time, for example a voltage that represents a temperature.",
    "demo": "מזיזים כפתור, והמתח שלו נרשם כאות בגרף.",
+   "demo_en": "Move a knob, and its voltage is recorded as a signal on the graph.",
    "used_by": [
     "analog_signal",
     "digital_signal",
@@ -910,11 +1075,14 @@
    "en": "Rate of change",
    "symbol": "dV/dt",
    "unit": "V/s",
+   "unit_en": "V/s",
    "requires": [
     "time_graph"
    ],
    "definition": "כמה מהר גודל משתנה ביחידת זמן. בגרף זמן זה שיפוע הקו: תלול = שינוי מהיר.",
+   "definition_en": "How fast a quantity changes per unit of time. On a time plot it is the slope of the line: steep = fast change.",
    "demo": "קו משיק שזז לאורך עקומה ומציג את השיפוע.",
+   "demo_en": "A tangent line that slides along a curve and shows the slope.",
    "used_by": [
     "exponential",
     "capacitor_current",
@@ -932,11 +1100,14 @@
    "en": "Exponential change",
    "symbol": "e^(−t/τ)",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "rate_of_change"
    ],
    "definition": "שינוי שבו הקצב יחסי למרחק שנשאר: מהיר בהתחלה ומאט ככל שמתקרבים ליעד. אף פעם לא 'נגמר' לגמרי.",
+   "definition_en": "Change whose speed is proportional to the distance left: fast at first and slowing down as it approaches the target. It never quite 'finishes'.",
    "demo": "מיכל שמתרוקן דרך חור: זרימה חזקה כשמלא, חלשה כשכמעט ריק.",
+   "demo_en": "A tank draining through a hole: strong flow when full, weak when almost empty.",
    "used_by": [
     "time_constant",
     "ntc",
@@ -951,13 +1122,16 @@
    "en": "Capacitance",
    "symbol": "C",
    "unit": "F (פאראד)",
+   "unit_en": "F (farad)",
    "requires": [
     "charge",
     "voltage",
     "si_prefix"
    ],
    "definition": "כמה מטען רכיב אוגר לכל וולט: C = Q/V. קיבול גדול = אוגר יותר מטען באותו מתח.",
+   "definition_en": "How much charge a component stores per volt: C = Q/V. Larger capacitance = more charge at the same voltage.",
    "demo": "שני קבלים באותו מתח; הגדול מציג יותר מטען על הלוחות.",
+   "demo_en": "Two capacitors at the same voltage; the larger one shows more charge on its plates.",
    "used_by": [
     "capacitor"
    ]
@@ -970,12 +1144,15 @@
    "en": "Capacitor",
    "symbol": "C",
    "unit": "F",
+   "unit_en": "F",
    "requires": [
     "capacitance",
     "circuit"
    ],
    "definition": "שני לוחות מוליכים עם מבודד ביניהם. אוגר מטען ואנרגיה; המתח עליו לא יכול לקפוץ, רק להשתנות בהדרגה.",
+   "definition_en": "Two conducting plates with an insulator between them. It stores charge and energy; its voltage cannot jump, it can only change gradually.",
    "demo": "סוגרים מתג והמתח על הקבל עולה בהדרגה בגרף.",
+   "demo_en": "Close a switch and the capacitor voltage rises gradually on the graph.",
    "used_by": [
     "capacitor_current",
     "charging",
@@ -990,12 +1167,15 @@
    "en": "Capacitor current",
    "symbol": "I = C·dV/dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "capacitor",
     "rate_of_change"
    ],
    "definition": "זרם זורם בקבל רק כשהמתח עליו משתנה. מתח קבוע = אפס זרם.",
+   "definition_en": "Current flows in a capacitor only while its voltage is changing. Constant voltage = zero current.",
    "demo": "מזיזים את מתח הכניסה: רק בזמן התנועה מופיע זרם.",
+   "demo_en": "Move the input voltage: current appears only while it is moving.",
    "used_by": []
   },
   {
@@ -1006,12 +1186,15 @@
    "en": "Charging",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "capacitor",
     "resistor"
    ],
    "definition": "מצב שבו מקור דוחף מטען דרך נגד אל הקבל; המתח עולה בצורה מעריכית אל מתח המקור.",
+   "definition_en": "A source pushes charge through a resistor into the capacitor; the voltage rises exponentially towards the source voltage.",
    "demo": "סימולטור RC במצב טעינה.",
+   "demo_en": "The RC simulator in charging mode.",
    "used_by": [
     "discharging",
     "time_constant"
@@ -1025,11 +1208,14 @@
    "en": "Discharging",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "charging"
    ],
    "definition": "הקבל משחרר את המטען שאגר דרך נגד; המתח והזרם דועכים מעריכית לאפס.",
+   "definition_en": "The capacitor releases its stored charge through a resistor; voltage and current decay exponentially to zero.",
    "demo": "סימולטור RC במצב פריקה: הזרם מתהפך בכיוונו.",
+   "demo_en": "The RC simulator in discharging mode: the current reverses direction.",
    "used_by": []
   },
   {
@@ -1040,12 +1226,15 @@
    "en": "Capacitor energy",
    "symbol": "E = ½·C·V²",
    "unit": "J",
+   "unit_en": "J",
    "requires": [
     "capacitor",
     "energy"
    ],
    "definition": "האנרגיה האגורה בשדה החשמלי של הקבל. היא עולה בריבוע המתח.",
+   "definition_en": "The energy stored in the capacitor's electric field. It grows with the square of the voltage.",
    "demo": "מכפילים את המתח והאנרגיה המוצגת גדלה פי 4.",
+   "demo_en": "Double the voltage and the energy shown grows four times.",
    "used_by": []
   },
   {
@@ -1056,12 +1245,15 @@
    "en": "Time constant",
    "symbol": "τ = R·C",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "charging",
     "exponential"
    ],
    "definition": "הזמן שבו הקבל משלים 63.2% מהשינוי. אחרי 5τ הטעינה נחשבת גמורה (99.3%).",
+   "definition_en": "The time in which the capacitor completes 63.2% of the change. After 5τ the charge is considered complete (99.3%).",
    "demo": "סמני 1τ עד 5τ על עקומת הטעינה עם האחוזים.",
+   "demo_en": "Markers 1τ to 5τ on the charging curve, with the percentages.",
    "used_by": [
     "sensor_lag",
     "low_pass_rc",
@@ -1076,12 +1268,15 @@
    "en": "Inductance",
    "symbol": "L",
    "unit": "H (הנרי)",
+   "unit_en": "H (henry)",
    "requires": [
     "current",
     "rate_of_change"
    ],
    "definition": "תכונה של סליל להתנגד לשינוי בזרם. השראות גדולה = הזרם משתנה לאט יותר.",
+   "definition_en": "The property of a coil to oppose changes in current. Larger inductance = the current changes more slowly.",
    "demo": "מנסים לשנות זרם בסליל והוא 'נגרר' אחרי השינוי.",
+   "demo_en": "Try to change the current in a coil and it 'lags' behind.",
    "used_by": [
     "inductor"
    ]
@@ -1094,11 +1289,14 @@
    "en": "Magnetic field",
    "symbol": "B",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current"
    ],
    "definition": "שדה שנוצר סביב חוט שזורם בו זרם. בסליל השדה מתרכז ויכול למשוך ברזל.",
+   "definition_en": "A field created around a wire carrying current. In a coil the field is concentrated and can attract iron.",
    "demo": "מחט מצפן שזזה כשזרם עובר בחוט.",
+   "demo_en": "A compass needle that moves when current flows in a wire.",
    "used_by": [
     "inductor",
     "dc_motor"
@@ -1112,12 +1310,15 @@
    "en": "Inductor / Coil",
    "symbol": "L",
    "unit": "H",
+   "unit_en": "H",
    "requires": [
     "inductance",
     "magnetic_field"
    ],
    "definition": "חוט מלופף שאוגר אנרגיה בשדה מגנטי. הזרם בו לא יכול לקפוץ, בדומה למתח בקבל.",
+   "definition_en": "A coiled wire that stores energy in a magnetic field. Its current cannot jump, just as a capacitor's voltage cannot.",
    "demo": "סוגרים מתג והזרם בסליל עולה בהדרגה.",
+   "demo_en": "Close a switch and the inductor current rises gradually.",
    "used_by": [
     "back_emf",
     "relay"
@@ -1131,11 +1332,14 @@
    "en": "Back EMF / Inductive kick",
    "symbol": "V = L·dI/dt",
    "unit": "V",
+   "unit_en": "V",
    "requires": [
     "inductor"
    ],
    "definition": "כשמנתקים זרם בסליל בבת אחת, נוצר קפיצת מתח גבוהה מאוד שמנסה לשמור על הזרם.",
+   "definition_en": "When the current in a coil is cut suddenly, a very high voltage spike appears that tries to keep the current flowing.",
    "demo": "פותחים מתג בסליל: ניצוץ וקפיצת מתח בגרף.",
+   "demo_en": "Open a switch on a coil: a spark and a voltage spike on the graph.",
    "used_by": [
     "flyback_diode"
    ]
@@ -1148,12 +1352,15 @@
    "en": "Diode",
    "symbol": "D",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current",
     "conventional_current"
    ],
    "definition": "רכיב שמעביר זרם בכיוון אחד בלבד, מהאנודה לקתודה. כמו דלת שנפתחת רק לכיוון אחד.",
+   "definition_en": "A component that lets current through in one direction only, from anode to cathode. Like a door that opens only one way.",
    "demo": "הופכים את הדיודה במעגל: המנורה נדלקת רק בכיוון אחד.",
+   "demo_en": "Flip the diode in the circuit: the lamp lights in one direction only.",
    "used_by": [
     "forward_bias",
     "reverse_bias",
@@ -1168,11 +1375,14 @@
    "en": "Forward bias",
    "symbol": "V_F ≈ 0.7 V",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "diode"
    ],
    "definition": "האנודה חיובית מהקתודה: הדיודה מוליכה, ונופל עליה מתח קטן קבוע (≈0.7 V בסיליקון).",
+   "definition_en": "The anode is more positive than the cathode: the diode conducts, with a small fixed voltage across it (≈0.7 V for silicon).",
    "demo": "מד מתח על דיודה מוליכה מראה ~0.7 V.",
+   "demo_en": "A voltmeter across a conducting diode shows about 0.7 V.",
    "used_by": []
   },
   {
@@ -1183,11 +1393,14 @@
    "en": "Reverse bias",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "diode"
    ],
    "definition": "הקתודה חיובית מהאנודה: הדיודה חוסמת ואינה מוליכה.",
+   "definition_en": "The cathode is more positive than the anode: the diode blocks and does not conduct.",
    "demo": "הופכים קוטביות: הזרם יורד לאפס.",
+   "demo_en": "Reverse the polarity: the current drops to zero.",
    "used_by": [
     "flyback_diode"
    ]
@@ -1200,12 +1413,15 @@
    "en": "Flyback diode",
    "symbol": "D",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "reverse_bias",
     "back_emf"
    ],
    "definition": "דיודה במקביל לסליל, בממתח אחורי בעבודה רגילה. בניתוק היא נותנת לזרם מסלול ומונעת את קפיצת המתח.",
+   "definition_en": "A diode in parallel with a coil, reverse biased in normal operation. When the coil is switched off it gives the current a path and prevents the voltage spike.",
    "demo": "מנתקים סליל עם ובלי הדיודה ומשווים את קפיצת המתח.",
+   "demo_en": "Switch off a coil with and without the diode and compare the spike.",
    "used_by": [
     "thermostat_circuit"
    ]
@@ -1218,12 +1434,15 @@
    "en": "NPN transistor",
    "symbol": "Q",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "diode",
     "current"
    ],
    "definition": "רכיב עם שלושה הדקים: בסיס (B), קולקטור (C) ואמיטר (E). זרם קטן בבסיס שולט בזרם גדול מהקולקטור לאמיטר.",
+   "definition_en": "A component with three terminals: base (B), collector (C) and emitter (E). A small base current controls a large collector-to-emitter current.",
    "demo": "סליידר לזרם בסיס ומד לזרם הקולקטור.",
+   "demo_en": "A slider for the base current and a meter for the collector current.",
    "used_by": [
     "base_current",
     "cutoff"
@@ -1237,12 +1456,15 @@
    "en": "Base current",
    "symbol": "I_B",
    "unit": "A",
+   "unit_en": "A",
    "requires": [
     "transistor",
     "ohms_law"
    ],
    "definition": "הזרם הקטן שנכנס לבסיס ומפעיל את הטרנזיסטור. מוגבל בעזרת נגד בסיס: I_B = (V − 0.7)/R_B.",
+   "definition_en": "The small current that flows into the base and turns the transistor on. It is limited by a base resistor: I_B = (V − 0.7)/R_B.",
    "demo": "משנים נגד בסיס ורואים את I_B משתנה.",
+   "demo_en": "Change the base resistor and watch I_B change.",
    "used_by": [
     "current_gain"
    ]
@@ -1255,11 +1477,14 @@
    "en": "Current gain (β, hFE)",
    "symbol": "β",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "base_current"
    ],
    "definition": "היחס בין זרם הקולקטור לזרם הבסיס באזור הפעיל: I_C = β·I_B, בדרך כלל 100–300.",
+   "definition_en": "The ratio between collector current and base current in the active region: I_C = β·I_B, usually 100–300.",
    "demo": "מכפילים את I_B והזרם בקולקטור גדל פי β.",
+   "demo_en": "Double I_B and the collector current grows β times as much.",
    "used_by": [
     "saturation_transistor"
    ]
@@ -1272,11 +1497,14 @@
    "en": "Cutoff",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "transistor"
    ],
    "definition": "אין זרם בסיס: הטרנזיסטור כמו מתג פתוח, אין זרם בקולקטור.",
+   "definition_en": "No base current: the transistor is like an open switch, with no collector current.",
    "demo": "I_B = 0 והמנורה בקולקטור כבויה.",
+   "demo_en": "I_B = 0 and the lamp on the collector is off.",
    "used_by": [
     "saturation_transistor"
    ]
@@ -1289,12 +1517,15 @@
    "en": "Saturation",
    "symbol": "V_CE(sat) ≈ 0.2 V",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current_gain",
     "cutoff"
    ],
    "definition": "זרם בסיס גדול מספיק כך שהטרנזיסטור פתוח לגמרי, כמו מתג סגור. נופלים עליו רק ~0.2 V.",
+   "definition_en": "Base current large enough that the transistor is fully on, like a closed switch. Only ~0.2 V remains across it.",
    "demo": "מגדילים I_B עד ש-I_C מפסיק לעלות.",
+   "demo_en": "Increase I_B until I_C stops rising.",
    "used_by": [
     "transistor_switch"
    ]
@@ -1307,11 +1538,14 @@
    "en": "Transistor switch",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "saturation_transistor"
    ],
    "definition": "שימוש בטרנזיסטור רק בין קטעון לרוויה, כדי שאות חלש יפעיל עומס חזק.",
+   "definition_en": "Using a transistor only between cutoff and saturation, so that a weak signal can drive a strong load.",
    "demo": "אות לוגי מהבהב מדליק ומכבה עומס דרך הטרנזיסטור.",
+   "demo_en": "A blinking logic signal turns a load on and off through the transistor.",
    "used_by": [
     "thermostat_circuit"
    ]
@@ -1324,12 +1558,15 @@
    "en": "Relay",
    "symbol": "K",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "inductor",
     "switch"
    ],
    "definition": "מתג שמופעל על ידי אלקטרומגנט: זרם בסליל מושך עוגן שסוגר או פותח מגעים.",
+   "definition_en": "A switch operated by an electromagnet: current in the coil pulls an armature that closes or opens contacts.",
    "demo": "שולחים זרם לסליל והמגע נסגר בקליק.",
+   "demo_en": "Send current into the coil and the contact closes with a click.",
    "used_by": [
     "contact_no",
     "contact_nc",
@@ -1347,11 +1584,14 @@
    "en": "Normally Open contact",
    "symbol": "NO",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "relay"
    ],
    "definition": "מגע שפתוח במנוחה ונסגר רק כשהממסר מופעל.",
+   "definition_en": "A contact that is open at rest and closes only when the relay is energised.",
    "demo": "מפעילים ומפסיקים את הסליל ורואים את המגע נסגר ונפתח.",
+   "demo_en": "Energise and de-energise the coil and watch the contact close and open.",
    "used_by": [
     "ladder_contact"
    ]
@@ -1364,11 +1604,14 @@
    "en": "Normally Closed contact",
    "symbol": "NC",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "relay"
    ],
    "definition": "מגע שסגור במנוחה ונפתח כשהממסר מופעל.",
+   "definition_en": "A contact that is closed at rest and opens when the relay is energised.",
    "demo": "אותו ממסר עם שני מגעים: NO ו-NC מתנהגים הפוך.",
+   "demo_en": "The same relay with two contacts: NO and NC behave oppositely.",
    "used_by": [
     "ladder_contact",
     "fail_safe"
@@ -1382,11 +1625,14 @@
    "en": "Galvanic isolation",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "relay"
    ],
    "definition": "הפרדה חשמלית מלאה בין שני מעגלים; אין חיבור חשמלי ביניהם, רק מכני או מגנטי.",
+   "definition_en": "Complete electrical separation between two circuits; there is no electrical connection between them, only a mechanical or magnetic link.",
    "demo": "מעגל שליטה חלש של 5 V מפעיל מעגל הספק של 230 V בלי חיבור ביניהם.",
+   "demo_en": "A weak 5 V control circuit drives a 230 V power circuit with no connection between them.",
    "used_by": []
   },
   {
@@ -1397,12 +1643,15 @@
    "en": "Operational amplifier (Op-Amp)",
    "symbol": "U",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage",
     "voltage_source"
    ],
    "definition": "מגבר עם שתי כניסות, (+) לא-מהפכת ו-(−) מהפכת, ומוצא אחד. מגביר את ההפרש ביניהן פי מספר עצום.",
+   "definition_en": "An amplifier with two inputs, non-inverting (+) and inverting (−), and one output. It amplifies the difference between them by a huge factor.",
    "demo": "שני סליידרים לכניסות ומד במוצא.",
+   "demo_en": "Two sliders for the inputs and a meter on the output.",
    "used_by": [
     "gain",
     "circuit_feedback",
@@ -1417,11 +1666,14 @@
    "en": "Gain",
    "symbol": "A",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "opamp"
    ],
    "definition": "היחס בין גודל המוצא לגודל הכניסה: A = V_out/V_in.",
+   "definition_en": "The ratio between the size of the output and the size of the input: A = V_out/V_in.",
    "demo": "כניסה של 1 V ומוצא של 3 V: הגבר 3.",
+   "demo_en": "1 V in and 3 V out: a gain of 3.",
    "used_by": [
     "circuit_negative_feedback",
     "process_gain",
@@ -1437,12 +1689,15 @@
    "en": "Feedback (in a circuit)",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "opamp",
     "node"
    ],
    "definition": "חיבור שמחזיר חלק ממתח המוצא חזרה אל אחת הכניסות, כך שהמוצא משפיע על עצמו.",
+   "definition_en": "A connection that brings part of the output voltage back to one of the inputs, so the output influences itself.",
    "demo": "חוט מהמוצא לכניסה נדלק, והמוצא משנה התנהגות.",
+   "demo_en": "A wire from output to input lights up, and the output changes its behaviour.",
    "used_by": [
     "open_loop_gain",
     "circuit_negative_feedback",
@@ -1457,12 +1712,15 @@
    "en": "Open-loop gain",
    "symbol": "A_OL",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "opamp",
     "circuit_feedback"
    ],
    "definition": "ההגבר של המגבר בלי משוב, בסדר גודל של 100,000. הפרש של מיקרו-וולטים מספיק לרוויה.",
+   "definition_en": "The amplifier's gain without feedback, around 100,000. A few microvolts of difference is enough to saturate it.",
    "demo": "הפרש קטן מאוד בכניסות והמוצא קופץ לקצה.",
+   "demo_en": "A tiny difference at the inputs and the output jumps to the limit.",
    "used_by": [
     "saturation_opamp",
     "virtual_short"
@@ -1476,11 +1734,14 @@
    "en": "Output saturation / rails",
    "symbol": "V_sat",
    "unit": "V",
+   "unit_en": "V",
    "requires": [
     "open_loop_gain"
    ],
    "definition": "המוצא לא יכול לעבור את מתחי ההזנה; כשהוא מגיע אליהם הוא 'נתקע' שם.",
+   "definition_en": "The output cannot go beyond the supply voltages; when it reaches them it 'sticks' there.",
    "demo": "מגדילים את הכניסה והמוצא נעצר במתח ההזנה.",
+   "demo_en": "Increase the input and the output stops at the supply voltage.",
    "used_by": [
     "comparator"
    ]
@@ -1493,11 +1754,14 @@
    "en": "Comparator",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "saturation_opamp"
    ],
    "definition": "מגבר שעובד בלי משוב: אם V+ > V− המוצא גבוה, אחרת נמוך. מוצא בינארי.",
+   "definition_en": "An amplifier working without feedback: if V+ > V− the output is high, otherwise low. A binary output.",
    "demo": "מזיזים V+ סביב V− והמוצא מתהפך.",
+   "demo_en": "Move V+ around V− and the output flips.",
    "used_by": [
     "reference_voltage",
     "on_off_control",
@@ -1512,12 +1776,15 @@
    "en": "Reference voltage",
    "symbol": "V_ref",
    "unit": "V",
+   "unit_en": "V",
    "requires": [
     "comparator",
     "potentiometer"
    ],
    "definition": "מתח קבוע וידוע שמשווים אליו אות אחר; לרוב מגיע מפוטנציומטר או ממחלק מתח.",
+   "definition_en": "A fixed, known voltage that another signal is compared with; usually from a potentiometer or a voltage divider.",
    "demo": "מכוונים V_ref בפוטנציומטר ורואים את נקודת ההיפוך של המשווה זזה.",
+   "demo_en": "Set V_ref with a potentiometer and watch the comparator's switching point move.",
    "used_by": [
     "threshold"
    ]
@@ -1530,12 +1797,15 @@
    "en": "Negative feedback (amplifier)",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "circuit_feedback",
     "gain"
    ],
    "definition": "המוצא מוחזר לכניסה המהפכת (−). כל עלייה במוצא מקטינה את ההפרש בכניסות ומרסנת את עצמה, וכך המגבר עובד בצורה רגועה ומדויקת.",
+   "definition_en": "The output is fed back to the inverting input (−). Any rise in the output reduces the input difference and restrains itself, so the amplifier works calmly and precisely.",
    "demo": "מחברים את המוצא ל-(−) והמוצא מפסיק לקפוץ לקצוות.",
+   "demo_en": "Connect the output to (−) and the output stops jumping to the limits.",
    "used_by": [
     "virtual_short",
     "negative_feedback"
@@ -1549,12 +1819,15 @@
    "en": "Virtual short",
    "symbol": "V+ ≈ V−",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "open_loop_gain",
     "circuit_negative_feedback"
    ],
    "definition": "כשיש משוב שלילי, המגבר דואג ש-V+ ו-V− יהיו כמעט שווים. זה הכלל שמאפשר לחשב מגברים.",
+   "definition_en": "With negative feedback, the amplifier keeps V+ and V− almost equal. This is the rule that lets us calculate amplifier circuits.",
    "demo": "מגבר עם משוב: שני מדי הכניסה מציגים כמעט אותו ערך.",
+   "demo_en": "An amplifier with feedback: both input meters show almost the same value.",
    "used_by": [
     "voltage_follower",
     "noninverting_amp",
@@ -1569,11 +1842,14 @@
    "en": "Voltage follower",
    "symbol": "A = 1",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "virtual_short"
    ],
    "definition": "מוצא שמחובר ישירות ל-(−): המוצא שווה לכניסה, אבל יכול לספק זרם בלי להעמיס על המקור.",
+   "definition_en": "Output connected directly to (−): the output equals the input, but can supply current without loading the source.",
    "demo": "מחלק מתח שנופל תחת עומס, ומגבר עוקב שפותר את זה.",
+   "demo_en": "A voltage divider that sags under load, and a follower that fixes it.",
    "used_by": []
   },
   {
@@ -1584,12 +1860,15 @@
    "en": "Non-inverting amplifier",
    "symbol": "A = 1 + Rf/Rg",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "virtual_short",
     "voltage_divider"
    ],
    "definition": "מגביר את הכניסה בלי להפוך סימן. ההגבר נקבע על ידי שני נגדים.",
+   "definition_en": "Amplifies the input without changing its sign. The gain is set by two resistors.",
    "demo": "משנים Rf ו-Rg ורואים את ההגבר.",
+   "demo_en": "Change Rf and Rg and watch the gain.",
    "used_by": []
   },
   {
@@ -1600,11 +1879,14 @@
    "en": "Inverting amplifier",
    "symbol": "A = −Rf/Rin",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "virtual_short"
    ],
    "definition": "מגביר והופך את הסימן: כניסה חיובית נותנת מוצא שלילי.",
+   "definition_en": "Amplifies and flips the sign: a positive input gives a negative output.",
    "demo": "גל כניסה וגל מוצא הפוך וגדול יותר.",
+   "demo_en": "An input wave and a larger, inverted output wave.",
    "used_by": []
   },
   {
@@ -1615,12 +1897,15 @@
    "en": "Sensor",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "voltage",
     "resistance"
    ],
    "definition": "רכיב שממיר גודל פיזיקלי (טמפרטורה, מיקום, לחץ) לגודל חשמלי שאפשר למדוד.",
+   "definition_en": "A component that converts a physical quantity (temperature, position, pressure) into an electrical quantity that can be measured.",
    "demo": "אותו חדר נמדד בכמה חיישנים שונים.",
+   "demo_en": "The same room measured by several different sensors.",
    "used_by": [
     "measurement_range",
     "sensitivity",
@@ -1642,11 +1927,14 @@
    "en": "Measurement range",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sensor"
    ],
    "definition": "הערכים המינימלי והמקסימלי שהחיישן יודע למדוד בצורה אמינה.",
+   "definition_en": "The minimum and maximum values a sensor can measure reliably.",
    "demo": "מחוץ לתחום, קריאת החיישן נתקעת בקצה.",
+   "demo_en": "Outside the range, the sensor reading sticks at the edge.",
    "used_by": []
   },
   {
@@ -1657,12 +1945,15 @@
    "en": "Sensitivity",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sensor",
     "rate_of_change"
    ],
    "definition": "כמה האות החשמלי משתנה ליחידת שינוי בגודל הנמדד, למשל mV/°C.",
+   "definition_en": "How much the electrical signal changes per unit change of the measured quantity, for example mV/°C.",
    "demo": "שני חיישנים: אחד משנה הרבה מתח לכל מעלה, השני מעט.",
+   "demo_en": "Two sensors: one changes its voltage a lot per degree, the other only a little.",
    "used_by": []
   },
   {
@@ -1673,12 +1964,15 @@
    "en": "Thermistor",
    "symbol": "RT",
    "unit": "Ω",
+   "unit_en": "Ω",
    "requires": [
     "sensor",
     "resistor"
    ],
    "definition": "נגד שההתנגדות שלו משתנה מאוד עם הטמפרטורה.",
+   "definition_en": "A resistor whose resistance changes strongly with temperature.",
    "demo": "מחממים את התרמיסטור ורואים את ההתנגדות משתנה.",
+   "demo_en": "Heat the thermistor and watch its resistance change.",
    "used_by": [
     "ntc",
     "rtd"
@@ -1692,12 +1986,15 @@
    "en": "Negative Temperature Coefficient",
    "symbol": "NTC",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "thermistor",
     "exponential"
    ],
    "definition": "תרמיסטור שההתנגדות שלו יורדת כשהטמפרטורה עולה, בצורה מעריכית.",
+   "definition_en": "A thermistor whose resistance falls exponentially as the temperature rises.",
    "demo": "גרף התנגדות מול טמפרטורה של NTC.",
+   "demo_en": "Resistance-versus-temperature curve of an NTC.",
    "used_by": [
     "beta_equation",
     "vsense"
@@ -1711,11 +2008,14 @@
    "en": "Beta equation",
    "symbol": "R(T) = R25·e^(β(1/T − 1/T25))",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "ntc"
    ],
    "definition": "הנוסחה שמחשבת את התנגדות ה-NTC בכל טמפרטורה לפי ההתנגדות ב-25°C והמקדם β.",
+   "definition_en": "The formula that gives an NTC's resistance at any temperature from its resistance at 25°C and the coefficient β.",
    "demo": "מזינים טמפרטורה ומקבלים התנגדות; משנים β ורואים את העקומה.",
+   "demo_en": "Enter a temperature and get a resistance; change β and watch the curve.",
    "used_by": []
   },
   {
@@ -1726,11 +2026,14 @@
    "en": "Resistance Temperature Detector",
    "symbol": "PT100",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "thermistor"
    ],
    "definition": "חיישן פלטינה שההתנגדות שלו עולה כמעט ליניארית: 100 Ω ב-0°C. מדויק ונפוץ בתעשייה.",
+   "definition_en": "A platinum sensor whose resistance rises almost linearly: 100 Ω at 0°C. Accurate and common in industry.",
    "demo": "השוואת עקומה ליניארית של PT100 מול המעריכית של NTC.",
+   "demo_en": "The almost straight PT100 curve compared with the exponential NTC curve.",
    "used_by": []
   },
   {
@@ -1741,12 +2044,15 @@
    "en": "Sensing voltage",
    "symbol": "V_sense",
    "unit": "V",
+   "unit_en": "V",
    "requires": [
     "ntc",
     "voltage_divider"
    ],
    "definition": "המתח שיוצא ממחלק מתח שבו החיישן הוא אחד הנגדים. זהו האות שהמעגל 'רואה' במקום הטמפרטורה.",
+   "definition_en": "The voltage coming out of a voltage divider in which the sensor is one of the resistors. It is the signal the circuit 'sees' instead of the temperature.",
    "demo": "משנים טמפרטורה ורואים את V_sense משתנה בצומת המחלק.",
+   "demo_en": "Change the temperature and watch V_sense change at the divider node.",
    "used_by": [
     "th_on_off"
    ]
@@ -1759,12 +2065,15 @@
    "en": "Position sensor",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sensor",
     "potentiometer"
    ],
    "definition": "חיישן שממיר מיקום או זווית למתח, לרוב פוטנציומטר שמחובר מכנית לחלק הנע.",
+   "definition_en": "A sensor that converts a position or angle into a voltage, usually a potentiometer mechanically linked to the moving part.",
    "demo": "מצוף במיכל שמזיז פוטנציומטר לפי המפלס.",
+   "demo_en": "A float in a tank that turns a potentiometer according to the level.",
    "used_by": []
   },
   {
@@ -1775,12 +2084,15 @@
    "en": "Limit switch",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "switch",
     "sensor"
    ],
    "definition": "מתג שנלחץ כשחלק נע מגיע לקצה מסלולו; נותן אות כן/לא.",
+   "definition_en": "A switch that is pressed when a moving part reaches the end of its travel; it gives a yes/no signal.",
    "demo": "מסוע מזיז קופסה עד שהיא לוחצת על מתג הגבול.",
+   "demo_en": "A conveyor moves a box until it presses the limit switch.",
    "used_by": []
   },
   {
@@ -1791,11 +2103,14 @@
    "en": "Actuator",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "power"
    ],
    "definition": "רכיב שממיר אות חשמלי לפעולה פיזיקלית: חום, תנועה, זרימה.",
+   "definition_en": "A component that turns an electrical signal into a physical action: heat, motion, flow.",
    "demo": "אותו אות מפעיל גוף חימום, מנוע ושסתום.",
+   "demo_en": "The same signal drives a heater, a motor and a valve.",
    "used_by": [
     "heater",
     "dc_motor",
@@ -1814,12 +2129,15 @@
    "en": "Heater",
    "symbol": "H",
    "unit": "W",
+   "unit_en": "W",
    "requires": [
     "actuator",
     "power"
    ],
    "definition": "נגד שתוכנן להפוך חשמל לחום: P = V²/R.",
+   "definition_en": "A resistor designed to turn electricity into heat: P = V²/R.",
    "demo": "גוף חימום טבול שמתלבן ומחמם מים.",
+   "demo_en": "An immersed heater that glows and warms the water.",
    "used_by": [
     "thermostat_circuit"
    ]
@@ -1832,12 +2150,15 @@
    "en": "DC motor",
    "symbol": "M",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "actuator",
     "magnetic_field"
    ],
    "definition": "ממיר חשמל לסיבוב. המהירות עולה עם המתח.",
+   "definition_en": "Converts electricity into rotation. The speed rises with the voltage.",
    "demo": "סליידר מתח ומהירות סיבוב מוצגת.",
+   "demo_en": "A voltage slider and a rotation speed readout.",
    "used_by": [
     "pump"
    ]
@@ -1850,11 +2171,14 @@
    "en": "Valve",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "actuator"
    ],
    "definition": "רכיב שפותח או חוסם זרימה של נוזל או גז; יכול להיות On/Off או רציף (פתוח חלקית).",
+   "definition_en": "A device that opens or blocks the flow of a liquid or gas; it can be On/Off or continuous (partly open).",
    "demo": "שסתום שנפתח באחוזים והזרימה משתנה.",
+   "demo_en": "A valve opened in percent and the flow changes.",
    "used_by": []
   },
   {
@@ -1865,12 +2189,15 @@
    "en": "Pump",
    "symbol": "P",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "actuator",
     "dc_motor"
    ],
    "definition": "מנוע שמזיז נוזל; קובע ספיקה.",
+   "definition_en": "A motor that moves liquid; it sets the flow rate.",
    "demo": "משאבה ממלאת מיכל, מהירות קובעת ספיקה.",
+   "demo_en": "A pump fills a tank; its speed sets the flow rate.",
    "used_by": []
   },
   {
@@ -1881,11 +2208,14 @@
    "en": "Actuator saturation",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "actuator"
    ],
    "definition": "לאקטואטור יש גבול: חימום לא עולה מעל 100%, שסתום לא נפתח יותר מפתוח לגמרי.",
+   "definition_en": "An actuator has a limit: heating cannot exceed 100%, a valve cannot open beyond fully open.",
    "demo": "מבקשים 150% חימום והאקטואטור נעצר ב-100%.",
+   "demo_en": "Ask for 150% heating and the actuator stops at 100%.",
    "used_by": [
     "windup"
    ]
@@ -1898,12 +2228,15 @@
    "en": "Sensor lag",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sensor",
     "time_constant"
    ],
    "definition": "החיישן מגיב לשינוי באיחור, כי גם לו יש קבוע זמן משלו.",
+   "definition_en": "The sensor responds to a change late, because it has a time constant of its own.",
    "demo": "שני קווים: הטמפרטורה האמיתית והקריאה המאוחרת של החיישן.",
+   "demo_en": "Two lines: the real temperature and the delayed sensor reading.",
    "used_by": []
   },
   {
@@ -1914,11 +2247,14 @@
    "en": "Analog signal",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "signal"
    ],
    "definition": "אות שיכול לקבל כל ערך רציף בתחום, למשל 0 עד 10 V.",
+   "definition_en": "A signal that can take any continuous value in its range, for example 0 to 10 V.",
    "demo": "קו חלק ורציף בגרף.",
+   "demo_en": "A smooth, continuous line on the graph.",
    "used_by": [
     "sine_wave",
     "current_loop",
@@ -1934,11 +2270,14 @@
    "en": "Digital signal",
    "symbol": "0 / 1",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "signal"
    ],
    "definition": "אות שמקבל רק שני מצבים: נמוך (0) או גבוה (1).",
+   "definition_en": "A signal with only two states: low (0) or high (1).",
    "demo": "גל מלבני שקופץ בין שתי רמות.",
+   "demo_en": "A rectangular wave that jumps between two levels.",
    "used_by": [
     "square_wave",
     "sampling",
@@ -1954,11 +2293,14 @@
    "en": "Frequency",
    "symbol": "f",
    "unit": "Hz (הרץ)",
+   "unit_en": "Hz (hertz)",
    "requires": [
     "signal"
    ],
    "definition": "כמה פעמים בשנייה אות חוזר על עצמו.",
+   "definition_en": "How many times per second a signal repeats itself.",
    "demo": "גל שמאיץ ומאט, ומד התדר משתנה.",
+   "demo_en": "A wave that speeds up and slows down while the frequency meter changes.",
    "used_by": [
     "period",
     "filter",
@@ -1974,11 +2316,14 @@
    "en": "Period",
    "symbol": "T = 1/f",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "frequency"
    ],
    "definition": "משך הזמן של חזרה אחת של האות.",
+   "definition_en": "The duration of one repetition of the signal.",
    "demo": "סמנים על גל שמודדים מחזור אחד.",
+   "demo_en": "Markers on a wave measuring one period.",
    "used_by": [
     "square_wave",
     "sine_wave",
@@ -1996,12 +2341,15 @@
    "en": "Square wave",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "digital_signal",
     "period"
    ],
    "definition": "אות שמתחלף בין שתי רמות בזמנים קבועים.",
+   "definition_en": "A signal that alternates between two levels at fixed intervals.",
    "demo": "מחולל אותות במצב גל ריבועי.",
+   "demo_en": "A signal generator in square-wave mode.",
    "used_by": [
     "low_pass_rc"
    ]
@@ -2014,12 +2362,15 @@
    "en": "Sine wave",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "analog_signal",
     "period"
    ],
    "definition": "אות רציף בצורת גל חלק שחוזר על עצמו; הבסיס לניתוח תדרים.",
+   "definition_en": "A continuous signal shaped like a smooth repeating wave; the basis of frequency analysis.",
    "demo": "נקודה מסתובבת על מעגל ויוצרת גל סינוס.",
+   "demo_en": "A point rotating on a circle traces a sine wave.",
    "used_by": [
     "phase",
     "frequency_response"
@@ -2033,11 +2384,14 @@
    "en": "Noise",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "signal"
    ],
    "definition": "שינויים אקראיים לא רצויים שמתווספים לאות ומסתירים את הערך האמיתי.",
+   "definition_en": "Random, unwanted variations added to a signal that hide the true value.",
    "demo": "מוסיפים רעש לאות חיישן ורואים קריאות קופצות.",
+   "demo_en": "Add noise to a sensor signal and watch the readings jump.",
    "used_by": [
     "filter",
     "chattering"
@@ -2051,12 +2405,15 @@
    "en": "Filter",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "noise",
     "frequency"
    ],
    "definition": "מעגל שמעביר חלק מהתדרים ומחליש אחרים.",
+   "definition_en": "A circuit that passes some frequencies and weakens others.",
    "demo": "אות רועש נכנס למסנן ויוצא חלק.",
+   "demo_en": "A noisy signal goes into a filter and comes out smooth.",
    "used_by": [
     "low_pass_rc"
    ]
@@ -2069,13 +2426,16 @@
    "en": "RC low-pass filter",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "filter",
     "time_constant",
     "square_wave"
    ],
    "definition": "נגד וקבל שמעבירים שינויים איטיים ומחליקים שינויים מהירים. המוצא נלקח על הקבל.",
+   "definition_en": "A resistor and capacitor that pass slow changes and smooth out fast ones. The output is taken across the capacitor.",
    "demo": "גל ריבועי מהיר נכנס ויוצא כמעט קו ישר עם תנודה קטנה.",
+   "demo_en": "A fast square wave goes in and comes out almost a straight line with a small ripple.",
    "used_by": [
     "cutoff_frequency"
    ]
@@ -2088,11 +2448,14 @@
    "en": "Cutoff frequency",
    "symbol": "f_c = 1/(2π·R·C)",
    "unit": "Hz",
+   "unit_en": "Hz",
    "requires": [
     "low_pass_rc"
    ],
    "definition": "התדר שמעליו המסנן מתחיל להחליש משמעותית.",
+   "definition_en": "The frequency above which the filter starts to attenuate significantly.",
    "demo": "סורקים תדר ורואים את המוצא נחלש אחרי f_c.",
+   "demo_en": "Sweep the frequency and watch the output weaken after f_c.",
    "used_by": [
     "bode_plot"
    ]
@@ -2105,12 +2468,15 @@
    "en": "4–20 mA current loop",
    "symbol": "",
    "unit": "mA",
+   "unit_en": "mA",
    "requires": [
     "analog_signal",
     "current"
    ],
    "definition": "תקן תעשייתי: 4 mA = מינימום, 20 mA = מקסימום. זרם לא נחלש בחוטים ארוכים, ו-0 mA מסמן תקלה.",
+   "definition_en": "An industrial standard: 4 mA = minimum, 20 mA = maximum. Current does not fade on long wires, and 0 mA signals a fault.",
    "demo": "מנתקים חוט והזרם צונח ל-0: התראת תקלה.",
+   "demo_en": "Cut a wire and the current drops to 0: a fault alarm.",
    "used_by": [
     "transmitter"
    ]
@@ -2123,12 +2489,15 @@
    "en": "Transmitter",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "current_loop",
     "sensor"
    ],
    "definition": "יחידה שקוראת חיישן וממירה את הקריאה לאות תקני כמו 4–20 mA.",
+   "definition_en": "A unit that reads a sensor and converts the reading into a standard signal such as 4–20 mA.",
    "demo": "PT100 → משדר → 12 mA = אמצע התחום.",
+   "demo_en": "PT100 → transmitter → 12 mA = middle of the range.",
    "used_by": []
   },
   {
@@ -2139,13 +2508,16 @@
    "en": "Sampling",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "analog_signal",
     "digital_signal",
     "period"
    ],
    "definition": "מדידת אות רציף בנקודות זמן קבועות בלבד.",
+   "definition_en": "Measuring a continuous signal only at fixed moments in time.",
    "demo": "נקודות מופיעות על גל רציף בקצב קבוע.",
+   "demo_en": "Points appear on a continuous wave at a fixed rate.",
    "used_by": [
     "sample_rate",
     "adc",
@@ -2160,12 +2532,15 @@
    "en": "Sample rate",
    "symbol": "f_s",
    "unit": "Hz",
+   "unit_en": "Hz",
    "requires": [
     "sampling",
     "frequency"
    ],
    "definition": "כמה דגימות נלקחות בשנייה.",
+   "definition_en": "How many samples are taken per second.",
    "demo": "מגדילים קצב והנקודות מתקרבות לצורת הגל.",
+   "demo_en": "Increase the rate and the points get closer to the wave shape.",
    "used_by": [
     "aliasing"
    ]
@@ -2178,11 +2553,14 @@
    "en": "Analog-to-digital converter (ADC)",
    "symbol": "ADC",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sampling"
    ],
    "definition": "רכיב שממיר מתח למספר שמחשב יכול לעבד.",
+   "definition_en": "A component that converts a voltage into a number that a computer can process.",
    "demo": "מתח 2.5 V נכנס ויוצא המספר 512.",
+   "demo_en": "2.5 V goes in and the number 512 comes out.",
    "used_by": [
     "resolution",
     "plc"
@@ -2196,11 +2574,14 @@
    "en": "Resolution",
    "symbol": "bits",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "adc"
    ],
    "definition": "כמה רמות שונות ה-ADC מבחין: 10 ביט = 1024 רמות.",
+   "definition_en": "How many distinct levels the ADC can tell apart: 10 bits = 1024 levels.",
    "demo": "מורידים ביטים והאות הופך למדרגות גסות.",
+   "demo_en": "Reduce the bits and the signal becomes coarse steps.",
    "used_by": []
   },
   {
@@ -2211,11 +2592,14 @@
    "en": "Aliasing",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sample_rate"
    ],
    "definition": "דגימה איטית מדי של אות מהיר יוצרת אות 'מזויף' בתדר נמוך. צריך לדגום ביותר מפי 2 מהתדר.",
+   "definition_en": "Sampling a fast signal too slowly produces a 'fake' low-frequency signal. You must sample at more than twice the frequency.",
    "demo": "גלגל מסתובב שנראה כאילו מסתובב אחורה.",
+   "demo_en": "A spinning wheel that seems to turn backwards.",
    "used_by": []
   },
   {
@@ -2226,12 +2610,15 @@
    "en": "Process / Plant",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "actuator",
     "sensor"
    ],
    "definition": "המערכת הפיזיקלית שרוצים לשלוט בה: מיכל מים, תנור, מנוע.",
+   "definition_en": "The physical system you want to control: a water tank, an oven, a motor.",
    "demo": "מיכל מים שמתחמם ומתקרר לבד.",
+   "demo_en": "A water tank that heats up and cools down on its own.",
    "used_by": [
     "control_system",
     "disturbance",
@@ -2246,11 +2633,14 @@
    "en": "Control system",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process"
    ],
    "definition": "מערכת שמביאה גודל בתהליך לערך הרצוי ושומרת עליו, למרות שינויים והפרעות.",
+   "definition_en": "A system that brings a quantity in the process to the desired value and keeps it there, despite changes and disturbances.",
    "demo": "אותו מיכל עם ובלי מערכת בקרה.",
+   "demo_en": "The same tank with and without a control system.",
    "used_by": [
     "setpoint",
     "process_variable",
@@ -2265,11 +2655,14 @@
    "en": "Setpoint",
    "symbol": "SP",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "control_system"
    ],
    "definition": "הערך שרוצים שהגודל המבוקר יגיע אליו, למשל 50°C.",
+   "definition_en": "The value you want the controlled quantity to reach, for example 50°C.",
    "demo": "סליידר SP וקו מקווקו בגרף.",
+   "demo_en": "An SP slider and a dashed line on the graph.",
    "used_by": [
     "controller",
     "error",
@@ -2285,12 +2678,15 @@
    "en": "Process variable",
    "symbol": "PV",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "control_system",
     "sensor"
    ],
    "definition": "הערך הנמדד בפועל של הגודל המבוקר, כפי שהחיישן קורא.",
+   "definition_en": "The actual measured value of the controlled quantity, as the sensor reads it.",
    "demo": "קו הטמפרטורה האמיתית מתחת לקו ה-SP.",
+   "demo_en": "The real temperature line below the SP line.",
    "used_by": [
     "controller",
     "error",
@@ -2306,12 +2702,15 @@
    "en": "Manipulated variable",
    "symbol": "MV",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "control_system",
     "actuator"
    ],
    "definition": "הגודל שהבקר משנה כדי להשפיע על התהליך, למשל אחוז חימום.",
+   "definition_en": "The quantity the controller changes to influence the process, for example the heating percentage.",
    "demo": "סליידר MV שמשנה את קצב החימום.",
+   "demo_en": "An MV slider that changes the heating rate.",
    "used_by": [
     "controller"
    ]
@@ -2324,13 +2723,16 @@
    "en": "Controller",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "setpoint",
     "process_variable",
     "manipulated_variable"
    ],
    "definition": "המוח של המערכת: משווה בין SP ל-PV ומחליט מה ערך ה-MV.",
+   "definition_en": "The brain of the system: compares SP with PV and decides the value of MV.",
    "demo": "אתה הבקר: מזיז MV ידנית כדי ש-PV יגיע ל-SP.",
+   "demo_en": "You are the controller: move MV by hand so that PV reaches SP.",
    "used_by": [
     "open_loop",
     "feedback",
@@ -2347,12 +2749,15 @@
    "en": "Error",
    "symbol": "e = SP − PV",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "setpoint",
     "process_variable"
    ],
    "definition": "ההפרש בין הרצוי למצוי. שגיאה חיובית = צריך להעלות.",
+   "definition_en": "The difference between desired and actual. A positive error = need to go up.",
    "demo": "מד שגיאה בזמן אמת שמתאפס כש-PV = SP.",
+   "demo_en": "A live error meter that reaches zero when PV = SP.",
    "used_by": [
     "closed_loop",
     "summing_junction",
@@ -2370,11 +2775,14 @@
    "en": "Disturbance",
    "symbol": "d",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process"
    ],
    "definition": "השפעה חיצונית לא נשלטת שמזיזה את התהליך, למשל חלון שנפתח או מים קרים שנכנסים.",
+   "definition_en": "An external, uncontrolled influence that pushes the process, such as an open window or cold water flowing in.",
    "demo": "כפתור 'פתח חלון' שמקרר את המיכל פתאום.",
+   "demo_en": "An 'open the window' button that suddenly cools the tank.",
    "used_by": [
     "open_loop",
     "cascade",
@@ -2389,12 +2797,15 @@
    "en": "Open loop",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "controller",
     "disturbance"
    ],
    "definition": "בקרה בלי מדידה של התוצאה: הבקר פועל לפי תוכנית ולא יודע אם הצליח.",
+   "definition_en": "Control without measuring the result: the controller follows a plan and does not know whether it succeeded.",
    "demo": "חימום קבוע: עובד, עד שמגיעה הפרעה.",
+   "demo_en": "Constant heating: it works, until a disturbance arrives.",
    "used_by": []
   },
   {
@@ -2405,13 +2816,16 @@
    "en": "Feedback",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process_variable",
     "controller",
     "circuit_feedback"
    ],
    "definition": "החזרת המדידה של המוצא אל הבקר, כדי שיחליט לפי מה שקורה בפועל.",
+   "definition_en": "Bringing the measurement of the output back to the controller, so it decides according to what is actually happening.",
    "demo": "קו מהחיישן חזרה לבקר נדלק בדיאגרמה.",
+   "demo_en": "A line from the sensor back to the controller lights up in the diagram.",
    "used_by": [
     "closed_loop"
    ]
@@ -2424,12 +2838,15 @@
    "en": "Closed loop",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "feedback",
     "error"
    ],
    "definition": "בקרה עם משוב: הבקר מודד את PV, מחשב שגיאה ומתקן כל הזמן.",
+   "definition_en": "Control with feedback: the controller measures PV, calculates the error and keeps correcting.",
    "demo": "אותה הפרעה, והפעם הבקר מתקן אוטומטית.",
+   "demo_en": "The same disturbance, and this time the controller corrects automatically.",
    "used_by": [
     "negative_feedback",
     "positive_feedback",
@@ -2447,12 +2864,15 @@
    "en": "Negative feedback",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop",
     "circuit_negative_feedback"
    ],
    "definition": "המשוב פועל נגד השינוי: טמפרטורה עולה, החימום יורד. מייצב.",
+   "definition_en": "Feedback that acts against the change: temperature rises, heating goes down. Stabilising.",
    "demo": "מעלים PV והבקר מגיב בהורדת MV.",
+   "demo_en": "Raise PV and the controller responds by lowering MV.",
    "used_by": []
   },
   {
@@ -2463,11 +2883,14 @@
    "en": "Positive feedback",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop"
    ],
    "definition": "המשוב מחזק את השינוי: עלייה גורמת לעוד עלייה. מוביל לבריחה או למצב 'נעול'.",
+   "definition_en": "Feedback that reinforces the change: a rise causes a further rise. It leads to runaway or a 'latched' state.",
    "demo": "מחברים משוב בסימן הפוך והטמפרטורה בורחת.",
+   "demo_en": "Connect feedback with the wrong sign and the temperature runs away.",
    "used_by": [
     "schmitt_trigger"
    ]
@@ -2480,11 +2903,14 @@
    "en": "Block diagram",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop"
    ],
    "definition": "שרטוט שבו כל רכיב הוא בלוק וחצים מראים את זרימת האותות.",
+   "definition_en": "A drawing in which every element is a block and arrows show how signals flow.",
    "demo": "גוררים בלוקים ומחברים חצים לחוג.",
+   "demo_en": "Drag blocks and connect arrows into a loop.",
    "used_by": [
     "summing_junction",
     "transfer_function"
@@ -2498,12 +2924,15 @@
    "en": "Summing junction",
    "symbol": "Σ",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "block_diagram",
     "error"
    ],
    "definition": "עיגול בדיאגרמה שמחבר או מחסר אותות; כך מחשבים e = SP − PV.",
+   "definition_en": "A circle in the diagram that adds or subtracts signals; this is how e = SP − PV is calculated.",
    "demo": "שני חצים נכנסים עם + ו-− ויוצאת שגיאה.",
+   "demo_en": "Two arrows enter with + and −, and the error comes out.",
    "used_by": []
   },
   {
@@ -2514,12 +2943,15 @@
    "en": "Transient",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop",
     "time_graph"
    ],
    "definition": "התקופה שבה המערכת עוד משתנה אחרי שינוי או הפרעה.",
+   "definition_en": "The period in which the system is still changing after a change or a disturbance.",
    "demo": "החלק העקום בגרף אחרי שינוי SP מודגש.",
+   "demo_en": "The curved part of the graph after an SP change is highlighted.",
    "used_by": [
     "steady_state",
     "step_input"
@@ -2533,11 +2965,14 @@
    "en": "Steady state",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "transient"
    ],
    "definition": "המצב שאליו המערכת מתייצבת אחרי שהמעבר נגמר, כשהגדלים כבר לא משתנים.",
+   "definition_en": "The state the system settles into after the transient is over, when the quantities no longer change.",
    "demo": "החלק השטוח בגרף מודגש.",
+   "demo_en": "The flat part of the graph is highlighted.",
    "used_by": [
     "limit_cycle",
     "process_gain",
@@ -2554,12 +2989,15 @@
    "en": "Step input",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "setpoint",
     "transient"
    ],
    "definition": "שינוי פתאומי וחד בכניסה, למשל SP קופץ מ-20 ל-50. הדרך הסטנדרטית לבדוק מערכת.",
+   "definition_en": "A sudden, sharp change at the input, for example SP jumps from 20 to 50. The standard way to test a system.",
    "demo": "כפתור 'מדרגה' שמקפיץ את ה-SP.",
+   "demo_en": "A 'step' button that makes the SP jump.",
    "used_by": [
     "rise_time",
     "overshoot",
@@ -2574,13 +3012,16 @@
    "en": "On/Off (bang-bang) control",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop",
     "comparator",
     "relay"
    ],
    "definition": "בקר שהמוצא שלו רק דלוק או כבוי: מתחת ל-SP מדליק, מעל מכבה.",
+   "definition_en": "A controller whose output is only on or off: below SP it switches on, above it switches off.",
    "demo": "תרמוסטט פשוט שמדליק ומכבה חימום.",
+   "demo_en": "A simple thermostat that switches heating on and off.",
    "used_by": [
     "threshold"
    ]
@@ -2593,12 +3034,15 @@
    "en": "Threshold",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "on_off_control",
     "reference_voltage"
    ],
    "definition": "הערך שבו הבקר מחליט להחליף מצב.",
+   "definition_en": "The value at which the controller decides to switch state.",
    "demo": "קו סף בגרף ונקודות ההחלפה מסומנות.",
+   "demo_en": "A threshold line on the graph with the switching points marked.",
    "used_by": [
     "chattering",
     "alarm"
@@ -2612,12 +3056,15 @@
    "en": "Chattering",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "threshold",
     "noise"
    ],
    "definition": "החלפה מהירה ומתמשכת בין דלוק לכבוי כשהאות רועש סביב הסף. שוחק ממסרים.",
+   "definition_en": "Fast, continual switching between on and off when a noisy signal hovers around the threshold. It wears out relays.",
    "demo": "אות רועש סביב הסף והממסר מקשקש.",
+   "demo_en": "A noisy signal around the threshold and the relay chatters.",
    "used_by": [
     "hysteresis"
    ]
@@ -2630,11 +3077,14 @@
    "en": "Hysteresis",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "chattering"
    ],
    "definition": "שימוש בשני ספים שונים: אחד להדלקה ואחד לכיבוי. הפער ביניהם מונע ריצוד.",
+   "definition_en": "Using two different thresholds: one to switch on and one to switch off. The gap between them prevents chattering.",
    "demo": "מרחיבים את חלון ההיסטרזיס והריצוד נעלם.",
+   "demo_en": "Widen the hysteresis window and the chattering disappears.",
    "used_by": [
     "schmitt_trigger",
     "limit_cycle"
@@ -2648,13 +3098,16 @@
    "en": "Schmitt trigger",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "hysteresis",
     "positive_feedback",
     "comparator"
    ],
    "definition": "משווה עם משוב חיובי דרך נגד, שיוצר מעצמו שני ספים.",
+   "definition_en": "A comparator with positive feedback through a resistor, which creates two thresholds by itself.",
    "demo": "המעגל מהסימולטור: מסירים את Rh וההיסטרזיס נעלם.",
+   "demo_en": "The circuit from the simulator: remove Rh and the hysteresis disappears.",
    "used_by": [
     "th_on_off"
    ]
@@ -2667,12 +3120,15 @@
    "en": "Turn-on / turn-off thresholds",
    "symbol": "Th_on / Th_off",
    "unit": "°C",
+   "unit_en": "°C",
    "requires": [
     "schmitt_trigger",
     "vsense"
    ],
    "definition": "שתי הטמפרטורות שבהן הבקר מדליק ומכבה את החימום.",
+   "definition_en": "The two temperatures at which the controller switches the heating on and off.",
    "demo": "שני קווים בגרף והחימום מתחלף רק כשנוגעים בהם.",
+   "demo_en": "Two lines on the graph; the heating switches only when they are touched.",
    "used_by": [
     "hysteresis_width",
     "thermostat_circuit"
@@ -2686,11 +3142,14 @@
    "en": "Hysteresis width",
    "symbol": "ΔT = Th_off − Th_on",
    "unit": "°C",
+   "unit_en": "°C",
    "requires": [
     "th_on_off"
    ],
    "definition": "הפער בין שני הספים. נקבע ביחס הנגדים Rin/Rh.",
+   "definition_en": "The gap between the two thresholds. It is set by the resistor ratio Rin/Rh.",
    "demo": "משנים Rh ורואים את הפער משתנה.",
+   "demo_en": "Change Rh and watch the gap change.",
    "used_by": []
   },
   {
@@ -2701,12 +3160,15 @@
    "en": "Limit cycle",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "hysteresis",
     "steady_state"
    ],
    "definition": "תנודה קבועה וחוזרת בין שני הספים. בבקרת On/Off זהו ה'מצב היציב'.",
+   "definition_en": "A steady, repeating oscillation between the two thresholds. In On/Off control this is the 'steady state'.",
    "demo": "גרף ארוך שבו התנודה חוזרת על עצמה.",
+   "demo_en": "A long graph in which the oscillation repeats itself.",
    "used_by": [
     "ripple",
     "switching_wear"
@@ -2720,11 +3182,14 @@
    "en": "Ripple",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "limit_cycle"
    ],
    "definition": "משרעת התנודה סביב הערך הרצוי.",
+   "definition_en": "The amplitude of the oscillation around the desired value.",
    "demo": "מודדים פסגה לשפל של התנודה.",
+   "demo_en": "Measure peak to trough of the oscillation.",
    "used_by": []
   },
   {
@@ -2735,12 +3200,15 @@
    "en": "Switching wear",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "limit_cycle",
     "relay"
    ],
    "definition": "כל החלפה שוחקת את המגע. היסטרזיס רחב = פחות החלפות אבל ריפל גדול. זו פשרה.",
+   "definition_en": "Every switching wears the contact. Wide hysteresis = fewer switchings but a large ripple. It is a trade-off.",
    "demo": "ספירת מיתוגים מול רוחב ההיסטרזיס.",
+   "demo_en": "Switching count versus hysteresis width.",
    "used_by": [
     "thermostat_circuit"
    ]
@@ -2753,6 +3221,7 @@
    "en": "Thermostat circuit",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "th_on_off",
     "transistor_switch",
@@ -2761,7 +3230,9 @@
     "switching_wear"
    ],
    "definition": "החוג המלא: NTC → מחלק מתח → משווה עם משוב חיובי → טרנזיסטור → ממסר → חימום → מים → NTC.",
+   "definition_en": "The complete loop: NTC → voltage divider → comparator with positive feedback → transistor → relay → heater → water → NTC.",
    "demo": "סימולטור הטרמוסטט המלא כשלב בוס.",
+   "demo_en": "The full thermostat simulator as a boss level.",
    "used_by": []
   },
   {
@@ -2772,11 +3243,14 @@
    "en": "Model",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process"
    ],
    "definition": "תיאור מתמטי של איך התהליך מגיב לכניסה. מאפשר לחזות ולתכנן בקר.",
+   "definition_en": "A mathematical description of how the process responds to an input. It lets you predict and design a controller.",
    "demo": "המודל מנבא קו, והתהליך האמיתי מתנהג בהתאם.",
+   "demo_en": "The model predicts a line, and the real process behaves accordingly.",
    "used_by": [
     "process_gain",
     "feedforward"
@@ -2790,13 +3264,16 @@
    "en": "Process gain",
    "symbol": "K",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "model",
     "gain",
     "steady_state"
    ],
    "definition": "כמה המוצא משתנה במצב יציב ליחידת שינוי בכניסה. K = ΔPV/ΔMV.",
+   "definition_en": "How much the output changes at steady state per unit change of the input. K = ΔPV/ΔMV.",
    "demo": "MV עולה ב-10% ו-PV מתייצב 5°C גבוה יותר: K = 0.5 °C/%.",
+   "demo_en": "MV rises by 10% and PV settles 5°C higher: K = 0.5 °C/%.",
    "used_by": [
     "first_order"
    ]
@@ -2809,12 +3286,15 @@
    "en": "First-order process",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process_gain",
     "time_constant"
    ],
    "definition": "תהליך שמגיב למדרגה בעקומה מעריכית, בדיוק כמו טעינת קבל. מאופיין ב-K וב-τ.",
+   "definition_en": "A process that responds to a step with an exponential curve, exactly like a charging capacitor. Described by K and τ.",
    "demo": "מיכל מים ועקומת קבל מונחים זה על זה.",
+   "demo_en": "A water tank and a capacitor curve laid on top of each other.",
    "used_by": [
     "newton_cooling",
     "dead_time",
@@ -2829,11 +3309,14 @@
    "en": "Newton's law of cooling",
    "symbol": "dT/dt = −(T − T_amb)/τ",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "first_order"
    ],
    "definition": "גוף חם מתקרר בקצב יחסי להפרש בינו לבין הסביבה; זה מסדר ראשון.",
+   "definition_en": "A hot body cools at a rate proportional to the difference between it and its surroundings; this is first order.",
    "demo": "כוס קפה מתקררת לכיוון טמפרטורת החדר.",
+   "demo_en": "A cup of coffee cooling towards room temperature.",
    "used_by": []
   },
   {
@@ -2844,11 +3327,14 @@
    "en": "Dead time",
    "symbol": "θ",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "first_order"
    ],
    "definition": "זמן שבו התהליך לא מגיב בכלל אחרי שינוי בכניסה, למשל מים שזורמים בצינור ארוך.",
+   "definition_en": "A time during which the process does not respond at all after a change in the input, for example water travelling down a long pipe.",
    "demo": "מקלחת: מסובבים ברז וההשפעה מגיעה אחרי שניות.",
+   "demo_en": "A shower: turn the tap and the effect arrives seconds later.",
    "used_by": []
   },
   {
@@ -2859,11 +3345,14 @@
    "en": "Rise time",
    "symbol": "t_r",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "step_input"
    ],
    "definition": "הזמן שלוקח לתגובה לעלות מ-10% ל-90% מהערך הסופי.",
+   "definition_en": "The time the response takes to go from 10% to 90% of its final value.",
    "demo": "שני סמנים על תגובת מדרגה ומדידה ביניהם.",
+   "demo_en": "Two markers on a step response and the time between them.",
    "used_by": []
   },
   {
@@ -2874,12 +3363,15 @@
    "en": "Overshoot",
    "symbol": "%OS",
    "unit": "%",
+   "unit_en": "%",
    "requires": [
     "step_input",
     "setpoint"
    ],
    "definition": "כמה התגובה עוברת את הערך הסופי לפני שהיא חוזרת, באחוזים.",
+   "definition_en": "How far the response goes past its final value before coming back, in percent.",
    "demo": "פסגה מעל קו ה-SP ומד אחוז החריגה.",
+   "demo_en": "A peak above the SP line and a percent-overshoot meter.",
    "used_by": [
     "second_order",
     "tuning"
@@ -2893,12 +3385,15 @@
    "en": "Settling time",
    "symbol": "t_s",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "step_input",
     "steady_state"
    ],
    "definition": "הזמן עד שהתגובה נכנסת ונשארת בתוך ±2% מהערך הסופי.",
+   "definition_en": "The time until the response enters and stays within ±2% of its final value.",
    "demo": "פס ±2% סביב הסופי ונקודת הכניסה אליו.",
+   "demo_en": "A ±2% band around the final value and the point where it enters it.",
    "used_by": [
     "tuning"
    ]
@@ -2911,12 +3406,15 @@
    "en": "Steady-state error",
    "symbol": "e_ss = SP − PV(∞)",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "error",
     "steady_state"
    ],
    "definition": "ההפרש שנשאר בין הרצוי למצוי אחרי שהמערכת נרגעה.",
+   "definition_en": "The difference left between desired and actual after the system has settled.",
    "demo": "תרמוסטט מכוון ל-50°C ומתייצב על 47°C: e_ss = 3°C.",
+   "demo_en": "A thermostat set to 50°C settles at 47°C: e_ss = 3°C.",
    "used_by": [
     "p_control"
    ]
@@ -2929,12 +3427,15 @@
    "en": "Second-order system",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "first_order",
     "overshoot"
    ],
    "definition": "מערכת עם שני מאגרי אנרגיה, למשל קפיץ ומסה. יכולה להתנדנד לפני שהיא מתייצבת.",
+   "definition_en": "A system with two energy stores, for example a spring and a mass. It can oscillate before it settles.",
    "demo": "מסה על קפיץ שקופצת ונרגעת.",
+   "demo_en": "A mass on a spring that bounces and settles.",
    "used_by": [
     "damping_ratio",
     "natural_frequency"
@@ -2948,11 +3449,14 @@
    "en": "Damping ratio",
    "symbol": "ζ",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "second_order"
    ],
    "definition": "קובע כמה מהר התנודות דועכות: ζ < 1 מתנדנד, ζ = 1 קריטי, ζ > 1 איטי בלי תנודה.",
+   "definition_en": "Sets how fast oscillations die out: ζ < 1 oscillates, ζ = 1 is critical, ζ > 1 is slow without oscillation.",
    "demo": "סליידר ζ ושלוש עקומות לדוגמה.",
+   "demo_en": "A ζ slider and three example curves.",
    "used_by": []
   },
   {
@@ -2963,12 +3467,15 @@
    "en": "Natural frequency",
    "symbol": "ω_n",
    "unit": "rad/s",
+   "unit_en": "rad/s",
    "requires": [
     "second_order",
     "frequency"
    ],
    "definition": "התדר שבו המערכת הייתה מתנדנדת בלי ריסון; קובע את מהירות התגובה.",
+   "definition_en": "The frequency at which the system would oscillate without damping; it sets the speed of the response.",
    "demo": "קפיץ קשיח מתנדנד מהר יותר.",
+   "demo_en": "A stiffer spring oscillates faster.",
    "used_by": []
   },
   {
@@ -2979,12 +3486,15 @@
    "en": "Laplace transform",
    "symbol": "s",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "exponential",
     "rate_of_change"
    ],
    "definition": "כלי מתמטי שהופך משוואות עם קצבי שינוי לביטויים אלגבריים במשתנה s. כך קל לחבר בלוקים.",
+   "definition_en": "A mathematical tool that turns equations with rates of change into algebraic expressions in the variable s. That makes it easy to connect blocks.",
    "demo": "קצב שינוי בזמן הופך ל-'כפל ב-s' באנימציה.",
+   "demo_en": "A rate of change in time turns into 'multiply by s' in an animation.",
    "used_by": [
     "transfer_function"
    ]
@@ -2997,12 +3507,15 @@
    "en": "Transfer function",
    "symbol": "G(s)",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "laplace",
     "block_diagram"
    ],
    "definition": "היחס בין מוצא לכניסה של בלוק במישור s. למשל G(s) = K/(τs + 1) לתהליך מסדר ראשון.",
+   "definition_en": "The ratio of output to input of a block in the s domain. For example G(s) = K/(τs + 1) for a first-order process.",
    "demo": "לוחצים על בלוק ורואים את ה-G(s) שלו.",
+   "demo_en": "Tap a block and see its G(s).",
    "used_by": [
     "pole",
     "zero",
@@ -3017,11 +3530,14 @@
    "en": "Pole",
    "symbol": "p",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "transfer_function"
    ],
    "definition": "ערך של s שבו המכנה של G(s) מתאפס. מיקום הקטבים קובע את אופי התגובה.",
+   "definition_en": "A value of s at which the denominator of G(s) becomes zero. Where the poles are decides the character of the response.",
    "demo": "מזיזים קוטב במישור ורואים את תגובת המדרגה משתנה.",
+   "demo_en": "Move a pole on the plane and watch the step response change.",
    "used_by": [
     "stability",
     "root_locus"
@@ -3035,11 +3551,14 @@
    "en": "Zero",
    "symbol": "z",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "transfer_function"
    ],
    "definition": "ערך של s שבו המונה של G(s) מתאפס; משפיע על צורת התגובה.",
+   "definition_en": "A value of s at which the numerator of G(s) becomes zero; it affects the shape of the response.",
    "demo": "מוסיפים אפס ורואים שינוי בחריגה.",
+   "demo_en": "Add a zero and watch the overshoot change.",
    "used_by": []
   },
   {
@@ -3050,13 +3569,16 @@
    "en": "Stability",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "closed_loop",
     "steady_state",
     "pole"
    ],
    "definition": "מערכת יציבה חוזרת למצב יציב אחרי הפרעה. לא יציבה = התנודות גדלות ללא גבול.",
+   "definition_en": "A stable system returns to a steady state after a disturbance. An unstable one = oscillations grow without limit.",
    "demo": "הגבר קטן בחוג: המערכת נרגעת. הגבר גדול: התנודות גדלות.",
+   "demo_en": "Small loop gain: the system settles. Large gain: the oscillations grow.",
    "used_by": [
     "marginal_stability",
     "root_locus"
@@ -3070,11 +3592,14 @@
    "en": "Marginal stability",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "stability"
    ],
    "definition": "הגבול בין יציב ללא יציב: תנודה קבועה שלא גדלה ולא דועכת.",
+   "definition_en": "The border between stable and unstable: a constant oscillation that neither grows nor dies out.",
    "demo": "מוצאים בדיוק את ההגבר שנותן תנודה קבועה.",
+   "demo_en": "Find exactly the gain that gives a constant oscillation.",
    "used_by": [
     "gain_margin",
     "phase_margin"
@@ -3088,13 +3613,16 @@
    "en": "Proportional (P) control",
    "symbol": "MV = Kp·e",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "controller",
     "error",
     "ess"
    ],
    "definition": "המוצא יחסי לשגיאה: שגיאה גדולה = תיקון חזק. משאיר בדרך כלל e_ss.",
+   "definition_en": "The output is proportional to the error: large error = strong correction. It usually leaves an e_ss.",
    "demo": "מגדילים Kp: e_ss קטן, אבל מופיעות תנודות.",
+   "demo_en": "Increase Kp: e_ss shrinks, but oscillations appear.",
    "used_by": [
     "kp",
     "i_control",
@@ -3109,11 +3637,14 @@
    "en": "Proportional gain",
    "symbol": "Kp",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "p_control"
    ],
    "definition": "עוצמת התגובה היחסית. גבוה מדי = תנודות ואי-יציבות.",
+   "definition_en": "The strength of the proportional response. Too high = oscillations and instability.",
    "demo": "סליידר Kp מול תגובת מדרגה.",
+   "demo_en": "A Kp slider against a step response.",
    "used_by": [
     "pid",
     "root_locus"
@@ -3127,12 +3658,15 @@
    "en": "Integral",
    "symbol": "∫e·dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "error",
     "time_graph"
    ],
    "definition": "הצבירה של גודל לאורך זמן; בגרף זה השטח מתחת לקו.",
+   "definition_en": "The accumulation of a quantity over time; on a graph it is the area under the line.",
    "demo": "השטח מתחת לעקומת השגיאה נצבע ומצטבר.",
+   "demo_en": "The area under the error curve is coloured in and grows.",
    "used_by": [
     "i_control"
    ]
@@ -3145,12 +3679,15 @@
    "en": "Integral (I) action",
    "symbol": "Ki·∫e·dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "integral",
     "p_control"
    ],
    "definition": "צובר את השגיאה לאורך זמן ומגביר תיקון כל עוד נשארה שגיאה, עד ש-e_ss נעלם.",
+   "definition_en": "Accumulates the error over time and keeps increasing the correction as long as an error remains, until e_ss disappears.",
    "demo": "מוסיפים I ורואים את e_ss נסגר לאט.",
+   "demo_en": "Add I and watch e_ss slowly close.",
    "used_by": [
     "ki",
     "windup",
@@ -3165,11 +3702,14 @@
    "en": "Integral gain / time",
    "symbol": "Ki, Ti",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "i_control"
    ],
    "definition": "קובע כמה מהר האינטגרל צובר. מהיר מדי = חריגה ותנודות.",
+   "definition_en": "Sets how fast the integral accumulates. Too fast = overshoot and oscillations.",
    "demo": "סליידר Ki והשפעה על החריגה.",
+   "demo_en": "A Ki slider and its effect on the overshoot.",
    "used_by": [
     "pid"
    ]
@@ -3182,12 +3722,15 @@
    "en": "Integral windup",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "i_control",
     "actuator_saturation"
    ],
    "definition": "כשהאקטואטור ברוויה, האינטגרל ממשיך לצבור. כשהשגיאה מתהפכת, נוצרת חריגה ענקית.",
+   "definition_en": "While the actuator is saturated the integral keeps accumulating. When the error reverses, a huge overshoot follows.",
    "demo": "חימום ב-100% זמן רב והאינטגרל מנופח.",
+   "demo_en": "Heating at 100% for a long time and the integral blows up.",
    "used_by": [
     "anti_windup"
    ]
@@ -3200,11 +3743,14 @@
    "en": "Anti-windup",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "windup"
    ],
    "definition": "עצירת הצבירה או הגבלתה כשהאקטואטור ברוויה.",
+   "definition_en": "Stopping or limiting the accumulation while the actuator is saturated.",
    "demo": "אותו תרחיש עם ובלי Anti-windup.",
+   "demo_en": "The same scenario with and without anti-windup.",
    "used_by": [
     "pid"
    ]
@@ -3217,12 +3763,15 @@
    "en": "Derivative",
    "symbol": "de/dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "rate_of_change",
     "error"
    ],
    "definition": "קצב השינוי של השגיאה; מנבא לאן היא הולכת.",
+   "definition_en": "The rate of change of the error; it predicts where the error is heading.",
    "demo": "שיפוע עקומת השגיאה מוצג כחץ.",
+   "demo_en": "The slope of the error curve shown as an arrow.",
    "used_by": [
     "d_control"
    ]
@@ -3235,12 +3784,15 @@
    "en": "Derivative (D) action",
    "symbol": "Kd·de/dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "derivative",
     "i_control"
    ],
    "definition": "מגיב למהירות השינוי ובולם תנועה לפני שהיא חורגת. מגביר רעש.",
+   "definition_en": "Responds to the speed of change and brakes motion before it overshoots. It amplifies noise.",
    "demo": "מוסיפים D והחריגה קטנה; מוסיפים רעש והמוצא קופץ.",
+   "demo_en": "Add D and the overshoot shrinks; add noise and the output jumps.",
    "used_by": [
     "kd"
    ]
@@ -3253,11 +3805,14 @@
    "en": "Derivative gain / time",
    "symbol": "Kd, Td",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "d_control"
    ],
    "definition": "עוצמת הבלימה. גבוה מדי = רגישות לרעש.",
+   "definition_en": "The strength of the braking. Too high = sensitivity to noise.",
    "demo": "סליידר Kd ואות רועש.",
+   "demo_en": "A Kd slider and a noisy signal.",
    "used_by": [
     "pid"
    ]
@@ -3270,6 +3825,7 @@
    "en": "PID controller",
    "symbol": "MV = Kp·e + Ki·∫e + Kd·de/dt",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "kp",
     "ki",
@@ -3277,7 +3833,9 @@
     "anti_windup"
    ],
    "definition": "שילוב שלושת האיברים: P מגיב להווה, I לעבר, ו-D לעתיד.",
+   "definition_en": "The combination of the three terms: P reacts to the present, I to the past, and D to the future.",
    "demo": "שלושה סליידרים ותגובה חיה.",
+   "demo_en": "Three sliders and a live response.",
    "used_by": [
     "tuning",
     "sample_time",
@@ -3292,13 +3850,16 @@
    "en": "Tuning",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "pid",
     "overshoot",
     "settling_time"
    ],
    "definition": "בחירת Kp, Ki, Kd כך שהמערכת תעמוד בדרישות: מהירות, חריגה, יציבות.",
+   "definition_en": "Choosing Kp, Ki and Kd so that the system meets its requirements: speed, overshoot, stability.",
    "demo": "אתגר: עמוד במפרט בכמה שפחות ניסיונות.",
+   "demo_en": "Challenge: meet the spec in as few tries as possible.",
    "used_by": [
     "ziegler_nichols"
    ]
@@ -3311,13 +3872,16 @@
    "en": "Ziegler–Nichols method",
    "symbol": "Ku, Pu",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "tuning",
     "p_control",
     "period"
    ],
    "definition": "שיטת כוונון: מגדילים Kp עד תנודה קבועה (Ku, Pu) ומחשבים מהם את המקדמים.",
+   "definition_en": "A tuning method: increase Kp until a constant oscillation appears (Ku, Pu) and calculate the gains from them.",
    "demo": "מגדילים Kp עד תנודה קבועה והמשחק מחשב מקדמים.",
+   "demo_en": "Raise Kp until a constant oscillation and the game calculates the gains.",
    "used_by": []
   },
   {
@@ -3328,11 +3892,14 @@
    "en": "Decibel",
    "symbol": "dB",
    "unit": "dB",
+   "unit_en": "dB",
    "requires": [
     "gain"
    ],
    "definition": "סקאלה לוגריתמית להגבר: 20·log10(A). פי 10 = 20 dB, פי 0.1 = −20 dB.",
+   "definition_en": "A logarithmic scale for gain: 20·log10(A). ×10 = 20 dB, ×0.1 = −20 dB.",
    "demo": "סליידר הגבר וממיר ל-dB.",
+   "demo_en": "A gain slider and a dB converter.",
    "used_by": [
     "bode_plot"
    ]
@@ -3345,12 +3912,15 @@
    "en": "Phase",
    "symbol": "φ",
    "unit": "° (מעלות)",
+   "unit_en": "° (degrees)",
    "requires": [
     "sine_wave",
     "period"
    ],
    "definition": "כמה גל המוצא מאחר אחרי גל הכניסה, כחלק מהמחזור במעלות.",
+   "definition_en": "How far the output wave lags behind the input wave, as a fraction of a period in degrees.",
    "demo": "שני גלי סינוס עם הסטה משתנה.",
+   "demo_en": "Two sine waves with an adjustable shift.",
    "used_by": [
     "frequency_response",
     "phase_margin"
@@ -3364,6 +3934,7 @@
    "en": "Frequency response",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sine_wave",
     "gain",
@@ -3371,7 +3942,9 @@
     "transfer_function"
    ],
    "definition": "איך מערכת מגיבה לסינוס בכל תדר: כמה היא מגבירה (הגבר) וכמה היא מאחרת (פאזה).",
+   "definition_en": "How a system responds to a sine wave at each frequency: how much it amplifies (gain) and how much it lags (phase).",
    "demo": "סורקים תדר בכניסת המסנן ומודדים את המוצא.",
+   "demo_en": "Sweep the frequency at the filter input and measure the output.",
    "used_by": [
     "bode_plot"
    ]
@@ -3384,13 +3957,16 @@
    "en": "Bode plot",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "frequency_response",
     "decibel",
     "cutoff_frequency"
    ],
    "definition": "שני גרפים מול תדר בסקאלה לוגריתמית: הגבר ב-dB ופאזה במעלות.",
+   "definition_en": "Two graphs against frequency on a logarithmic scale: gain in dB and phase in degrees.",
    "demo": "Bode של מסנן RC עם f_c מסומן.",
+   "demo_en": "The Bode plot of an RC filter with f_c marked.",
    "used_by": [
     "crossover_frequency",
     "gain_margin"
@@ -3404,11 +3980,14 @@
    "en": "Crossover frequency",
    "symbol": "ω_c",
    "unit": "rad/s",
+   "unit_en": "rad/s",
    "requires": [
     "bode_plot"
    ],
    "definition": "התדר שבו הגבר החוג הפתוח שווה 1 (0 dB).",
+   "definition_en": "The frequency at which the open-loop gain equals 1 (0 dB).",
    "demo": "סמן על Bode במקום שקו ההגבר חוצה 0 dB.",
+   "demo_en": "A marker on the Bode plot where the gain line crosses 0 dB.",
    "used_by": [
     "phase_margin"
    ]
@@ -3421,12 +4000,15 @@
    "en": "Gain margin",
    "symbol": "GM",
    "unit": "dB",
+   "unit_en": "dB",
    "requires": [
     "bode_plot",
     "marginal_stability"
    ],
    "definition": "בכמה אפשר להגדיל את ההגבר עד שהמערכת תגיע לגבול היציבות.",
+   "definition_en": "How much the gain can be increased before the system reaches the edge of stability.",
    "demo": "מגדילים הגבר עד שה-GM מגיע ל-0 והמערכת מתנדנדת.",
+   "demo_en": "Increase the gain until the GM reaches 0 and the system oscillates.",
    "used_by": []
   },
   {
@@ -3437,13 +4019,16 @@
    "en": "Phase margin",
    "symbol": "PM",
    "unit": "°",
+   "unit_en": "°",
    "requires": [
     "crossover_frequency",
     "phase",
     "marginal_stability"
    ],
    "definition": "כמה איחור פאזה נוסף המערכת יכולה לסבול בתדר החציה לפני אי-יציבות. 45°–60° זה טוב.",
+   "definition_en": "How much extra phase lag the system can tolerate at the crossover frequency before it becomes unstable. 45°–60° is good.",
    "demo": "מוסיפים זמן מת וה-PM מתכווץ.",
+   "demo_en": "Add dead time and the PM shrinks.",
    "used_by": []
   },
   {
@@ -3454,13 +4039,16 @@
    "en": "Root locus",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "pole",
     "kp",
     "stability"
    ],
    "definition": "מפה שמראה איך הקטבים של החוג הסגור זזים כשמגדילים את ההגבר.",
+   "definition_en": "A map showing how the closed-loop poles move as the gain is increased.",
    "demo": "מגדילים Kp והקטבים נעים במסלולם; חוצים לצד הימני = לא יציב.",
+   "demo_en": "Increase Kp and the poles move along their paths; crossing to the right side = unstable.",
    "used_by": []
   },
   {
@@ -3471,13 +4059,16 @@
    "en": "Programmable Logic Controller (PLC)",
    "symbol": "PLC",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "controller",
     "digital_signal",
     "adc"
    ],
    "definition": "מחשב תעשייתי שקורא כניסות, מריץ תוכנית ומפעיל יציאות במחזוריות.",
+   "definition_en": "An industrial computer that reads inputs, runs a program and drives outputs, over and over in cycles.",
    "demo": "PLC עם נורות כניסה ויציאה.",
+   "demo_en": "A PLC with input and output indicator lights.",
    "used_by": [
     "io",
     "scan_cycle",
@@ -3492,12 +4083,15 @@
    "en": "Inputs / Outputs (I/O)",
    "symbol": "DI, DO, AI, AO",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "plc",
     "analog_signal"
    ],
    "definition": "הנקודות שבהן ה-PLC מתחבר לעולם: כניסות ויציאות דיגיטליות ואנלוגיות.",
+   "definition_en": "The points where the PLC connects to the world: digital and analog inputs and outputs.",
    "demo": "מחברים חיישן לכניסה ומנוע ליציאה.",
+   "demo_en": "Connect a sensor to an input and a motor to an output.",
    "used_by": []
   },
   {
@@ -3508,12 +4102,15 @@
    "en": "Scan cycle",
    "symbol": "",
    "unit": "ms",
+   "unit_en": "ms",
    "requires": [
     "plc",
     "period"
    ],
    "definition": "הלולאה שה-PLC חוזר עליה: קריאת כניסות, ביצוע התוכנית, עדכון יציאות.",
+   "definition_en": "The loop the PLC repeats: read the inputs, run the program, update the outputs.",
    "demo": "אנימציה של שלושת שלבי הסריקה.",
+   "demo_en": "An animation of the three scan stages.",
    "used_by": [
     "sample_time"
    ]
@@ -3526,11 +4123,14 @@
    "en": "Boolean logic",
    "symbol": "AND, OR, NOT",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "digital_signal"
    ],
    "definition": "חישוב עם ערכים של אמת/שקר: AND דורש את כולם, OR דורש אחד, NOT הופך.",
+   "definition_en": "Calculating with true/false values: AND needs all of them, OR needs one, NOT inverts.",
    "demo": "שני מתגים ונורה בכל אחד מהמצבים.",
+   "demo_en": "Two switches and a lamp in each of the modes.",
    "used_by": [
     "truth_table",
     "ladder_logic",
@@ -3545,11 +4145,14 @@
    "en": "Truth table",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "boolean_logic"
    ],
    "definition": "טבלה שמראה את המוצא לכל צירוף כניסות.",
+   "definition_en": "A table that shows the output for every combination of inputs.",
    "demo": "לוחצים על שורות בטבלה והמעגל מתעדכן.",
+   "demo_en": "Tap rows in the table and the circuit updates.",
    "used_by": []
   },
   {
@@ -3560,13 +4163,16 @@
    "en": "Ladder logic",
    "symbol": "LD",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "boolean_logic",
     "plc",
     "relay"
    ],
    "definition": "שפת תכנות ל-PLC שנראית כמו שרטוט ממסרים: שני פסים ושלבים (Rungs) ביניהם.",
+   "definition_en": "A PLC programming language that looks like a relay drawing: two rails and rungs between them.",
    "demo": "ציור שלב והזרם 'זורם' כשהתנאים מתקיימים.",
+   "demo_en": "Draw a rung and the power 'flows' when the conditions are met.",
    "used_by": [
     "ladder_contact",
     "ladder_coil",
@@ -3582,13 +4188,16 @@
    "en": "Ladder contact",
    "symbol": "XIC / XIO",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "ladder_logic",
     "contact_no",
     "contact_nc"
    ],
    "definition": "סמל שבודק כניסה: מגע פתוח (XIC) עובר כשהכניסה דלוקה, מגע סגור (XIO) כשהיא כבויה.",
+   "definition_en": "A symbol that tests an input: an open contact (XIC) passes when the input is on, a closed contact (XIO) when it is off.",
    "demo": "לוחצים כניסה ורואים איזה מגע מעביר.",
+   "demo_en": "Tap an input and see which contact passes.",
    "used_by": [
     "seal_in"
    ]
@@ -3601,11 +4210,14 @@
    "en": "Ladder coil / output",
    "symbol": "OTE",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "ladder_logic"
    ],
    "definition": "סמל בסוף השלב שמפעיל יציאה כשהשלב 'מוליך'.",
+   "definition_en": "A symbol at the end of a rung that switches an output on when the rung 'conducts'.",
    "demo": "שלב מוליך והיציאה נדלקת.",
+   "demo_en": "A conducting rung and the output switches on.",
    "used_by": [
     "seal_in"
    ]
@@ -3618,12 +4230,15 @@
    "en": "Seal-in / latch",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "ladder_contact",
     "ladder_coil"
    ],
    "definition": "מגע של היציאה עצמה במקביל ללחצן ההפעלה, שמחזיק אותה דלוקה גם אחרי שעוזבים.",
+   "definition_en": "A contact of the output itself in parallel with the start button, which keeps it on even after the button is released.",
    "demo": "Start/Stop למנוע עם החזקה עצמית.",
+   "demo_en": "Start/Stop for a motor with a seal-in.",
    "used_by": []
   },
   {
@@ -3634,11 +4249,14 @@
    "en": "Timer",
    "symbol": "TON / TOF",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "ladder_logic"
    ],
    "definition": "פקודה שמשהה הפעלה (TON) או כיבוי (TOF) בזמן מוגדר.",
+   "definition_en": "An instruction that delays switching on (TON) or switching off (TOF) by a set time.",
    "demo": "לחצן ונורה שנדלקת אחרי 3 שניות.",
+   "demo_en": "A button and a lamp that lights up after 3 seconds.",
    "used_by": [
     "watchdog"
    ]
@@ -3651,11 +4269,14 @@
    "en": "Counter",
    "symbol": "CTU",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "ladder_logic"
    ],
    "definition": "סופר אירועים ומפעיל יציאה כשמגיעים למספר מוגדר.",
+   "definition_en": "Counts events and switches an output on when a set number is reached.",
    "demo": "מסוע: אחרי 10 קופסאות נדלקת נורה.",
+   "demo_en": "A conveyor: after 10 boxes a lamp lights up.",
    "used_by": []
   },
   {
@@ -3666,13 +4287,16 @@
    "en": "Controller sample time",
    "symbol": "T_s",
    "unit": "s",
+   "unit_en": "s",
    "requires": [
     "sampling",
     "scan_cycle",
     "pid"
    ],
    "definition": "כל כמה זמן הבקר הדיגיטלי מחשב מוצא חדש. איטי מדי ביחס ל-τ פוגע ביציבות.",
+   "definition_en": "How often the digital controller calculates a new output. Too slow relative to τ harms stability.",
    "demo": "מגדילים T_s והבקרה מתחילה להתנדנד.",
+   "demo_en": "Increase T_s and the control starts to oscillate.",
    "used_by": [
     "discrete_pid"
    ]
@@ -3685,11 +4309,14 @@
    "en": "Discrete PID",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "sample_time"
    ],
    "definition": "PID שמחושב בצעדים: האינטגרל הופך לסכום והנגזרת להפרש בין דגימות.",
+   "definition_en": "A PID calculated in steps: the integral becomes a sum and the derivative a difference between samples.",
    "demo": "טבלה של צעדי חישוב לצד הגרף.",
+   "demo_en": "A table of calculation steps next to the graph.",
    "used_by": []
   },
   {
@@ -3700,12 +4327,15 @@
    "en": "Cascade control",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "pid",
     "disturbance"
    ],
    "definition": "שני בקרים בשרשרת: הבקר החיצוני קובע את ה-SP של הבקר הפנימי, המהיר יותר.",
+   "definition_en": "Two controllers in a chain: the outer controller sets the SP of the faster inner controller.",
    "demo": "בקרת טמפרטורה שמכוונת בקר זרימת קיטור.",
+   "demo_en": "Temperature control that sets a steam-flow controller.",
    "used_by": [
     "inner_outer_loop"
    ]
@@ -3718,11 +4348,14 @@
    "en": "Inner / outer loop",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "cascade"
    ],
    "definition": "החוג הפנימי מתקן הפרעות מהר לפני שהן מגיעות לחוג החיצוני.",
+   "definition_en": "The inner loop corrects disturbances quickly before they reach the outer loop.",
    "demo": "הפרעה בלחץ הקיטור נבלעת בחוג הפנימי.",
+   "demo_en": "A disturbance in steam pressure is absorbed by the inner loop.",
    "used_by": []
   },
   {
@@ -3733,12 +4366,15 @@
    "en": "Feedforward",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "disturbance",
     "model"
    ],
    "definition": "מודדים את ההפרעה עצמה ומתקנים לפני שהיא משפיעה על PV.",
+   "definition_en": "Measure the disturbance itself and correct before it affects PV.",
    "demo": "מודדים את המים הקרים שנכנסים ומעלים חימום מראש.",
+   "demo_en": "Measure the cold water coming in and increase heating in advance.",
    "used_by": []
   },
   {
@@ -3749,11 +4385,14 @@
    "en": "Ratio control",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "controller"
    ],
    "definition": "שומר על יחס קבוע בין שני גדלים, למשל דלק ואוויר בשריפה.",
+   "definition_en": "Keeps a fixed ratio between two quantities, for example fuel and air in combustion.",
    "demo": "סליידר זרימת דלק והאוויר עוקב ביחס קבוע.",
+   "demo_en": "A fuel-flow slider and the air follows at a fixed ratio.",
    "used_by": []
   },
   {
@@ -3764,12 +4403,15 @@
    "en": "Alarm",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "process_variable",
     "threshold"
    ],
    "definition": "הודעה למפעיל כש-PV חורג מגבולות מוגדרים.",
+   "definition_en": "A message to the operator when PV goes beyond set limits.",
    "demo": "טמפרטורה עוברת גבול ונדלקת התראה.",
+   "demo_en": "Temperature crosses a limit and an alarm lights up.",
    "used_by": [
     "interlock"
    ]
@@ -3782,12 +4424,15 @@
    "en": "Interlock",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "alarm",
     "boolean_logic"
    ],
    "definition": "תנאי שחוסם פעולה מסוכנת, למשל חימום לא יופעל כשהמיכל ריק.",
+   "definition_en": "A condition that blocks a dangerous action, for example heating will not switch on when the tank is empty.",
    "demo": "מנסים להפעיל חימום במיכל ריק והאינטרלוק חוסם.",
+   "demo_en": "Try to switch on heating in an empty tank and the interlock blocks it.",
    "used_by": [
     "fail_safe"
    ]
@@ -3800,12 +4445,15 @@
    "en": "Fail-safe design",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "interlock",
     "contact_nc"
    ],
    "definition": "תכנון שבו כל תקלה, כמו ניתוק חשמל או חוט קרוע, מביאה את המערכת למצב בטוח.",
+   "definition_en": "A design in which any fault, such as a power cut or a broken wire, brings the system to a safe state.",
    "demo": "קורעים חוט: השסתום נסגר לבד.",
+   "demo_en": "Cut a wire: the valve closes by itself.",
    "used_by": [
     "emergency_stop",
     "watchdog"
@@ -3819,11 +4467,14 @@
    "en": "Emergency stop",
    "symbol": "E-Stop",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "fail_safe"
    ],
    "definition": "לחצן שמנתק פיזית את כל ההספק המסוכן, ללא תלות בתוכנה.",
+   "definition_en": "A button that physically cuts all dangerous power, independent of the software.",
    "demo": "לוחצים E-Stop והכול נעצר.",
+   "demo_en": "Press the E-Stop and everything stops.",
    "used_by": [
     "sis"
    ]
@@ -3836,12 +4487,15 @@
    "en": "Watchdog timer",
    "symbol": "",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "timer",
     "fail_safe"
    ],
    "definition": "טיימר שמאפס את המערכת אם הבקר הפסיק לשלוח 'דופק' בזמן.",
+   "definition_en": "A timer that resets the system if the controller stops sending a 'heartbeat' in time.",
    "demo": "התוכנה נתקעת וה-Watchdog מעביר למצב בטוח.",
+   "demo_en": "The software freezes and the watchdog switches to a safe state.",
    "used_by": []
   },
   {
@@ -3852,12 +4506,15 @@
    "en": "Safety Instrumented System (SIS)",
    "symbol": "SIS",
    "unit": "",
+   "unit_en": "",
    "requires": [
     "emergency_stop",
     "sensor"
    ],
    "definition": "מערכת נפרדת מהבקרה הרגילה, עם חיישנים ולוגיקה משלה, שתפקידה רק להביא למצב בטוח.",
+   "definition_en": "A separate system from the normal control, with its own sensors and logic, whose only job is to bring the process to a safe state.",
    "demo": "בקרה רגילה נכשלת וה-SIS מכבה את התהליך.",
+   "demo_en": "Normal control fails and the SIS shuts the process down.",
    "used_by": []
   }
  ]

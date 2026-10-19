@@ -18,6 +18,21 @@
     return e;
   };
 
+  /* ---------- language ---------- */
+  const LANG = () => window.CR_LANG || "he";
+  const tr = (x) => (x && typeof x === "object" ? (x[LANG()] ?? x.he) : x);
+  const STR = {
+    he: { flowI: "זרם I", flowV: "מתח V", push: "מתח (\"הדחיפה\")", showElec: "הצג תנועת אלקטרונים", showConv: "הצג זרם קונבנציונלי",
+      dirConv: "זרם קונבנציונלי: מ-(+) אל (−)", dirElec: "אלקטרונים: מ-(−) אל (+)", force: "כוח",
+      attract: 'משיכה <span dir="ltr">→←</span>', repel: 'דחייה <span dir="ltr">←→</span>', tapBall: "לחצו על כדור כדי להחליף את סימן המטען שלו",
+      value: "ערך", pfx: ["מגה", "קילו", "(בלי)", "מילי", "מיקרו", "ננו"] },
+    en: { flowI: "Current I", flowV: "Voltage V", push: "Voltage (the \"push\")", showElec: "Show electron movement", showConv: "Show conventional current",
+      dirConv: "Conventional current: from (+) to (−)", dirElec: "Electrons: from (−) to (+)", force: "Force",
+      attract: 'Attraction <span dir="ltr">→←</span>', repel: 'Repulsion <span dir="ltr">←→</span>', tapBall: "Tap a ball to flip the sign of its charge",
+      value: "Value", pfx: ["mega", "kilo", "(none)", "milli", "micro", "nano"] },
+  };
+  const str = (k) => STR[LANG()][k] ?? STR.he[k];
+
   /* ---------- number formatting ---------- */
   const PFX = [[1e6, "M"], [1e3, "k"], [1, ""], [1e-3, "m"], [1e-6, "µ"], [1e-9, "n"]];
   function si(v, unit, d = 2) {
@@ -33,7 +48,7 @@
   function sliderRow(parent, c, value, onInput) {
     const row = h("div", "wctl", parent);
     const top = h("div", "wctl-top", row);
-    h("span", "wctl-lab", top, c.label);
+    h("span", "wctl-lab", top, tr(c.label));
     const val = h("span", "wctl-val", top);
     const inp = h("input", "", row);
     inp.type = "range";
@@ -223,7 +238,7 @@
         const off = vert ? 26 : 30;
         const lx = B.cx + nx * off, ly = B.cy + ny * off + (vert ? 0 : ny > 0 ? 12 : -8);
         const anc = vert ? (nx > 0 ? "start" : "end") : "middle";
-        if (e.label) { const t = el("text", { x: lx, y: ly - 8, class: "w-lab", "text-anchor": anc }, gL); t.textContent = e.label; }
+        if (e.label) { const t = el("text", { x: lx, y: ly - 8, class: "w-lab", "text-anchor": anc }, gL); t.textContent = tr(e.label); }
         P.val = el("text", { x: lx, y: ly + 12, class: "w-val", "text-anchor": anc }, gL);
         if (e.t === "bat") { const t = el("text", { x: B.cx - B.ux * 18 - nx * 18, y: B.cy - B.uy * 18 - ny * 18 + 5, class: "w-lab", "text-anchor": "middle" }, gL); t.textContent = "+"; }
         P.g.addEventListener("click", () => {
@@ -236,7 +251,7 @@
     (S.nodeLabels || []).forEach((n) => {
       el("circle", { cx: n.at[0], cy: n.at[1], r: 5, class: "w-node" }, gL);
       const t = el("text", { x: n.at[0] + (n.dx || 10), y: n.at[1] + (n.dy || -10), class: "w-lab" }, gL);
-      t.textContent = n.text;
+      t.textContent = tr(n.text);
       n._v = el("text", { x: n.at[0] + (n.dx || 10), y: n.at[1] + (n.dy || -10) + 17, class: "w-val" }, gL);
     });
 
@@ -244,7 +259,7 @@
     const sliders = [];
     (S.controls || []).forEach((c) => {
       if (c.type === "button") {
-        const b = h("button", "w-btn", ctl, c.label);
+        const b = h("button", "w-btn", ctl, tr(c.label));
         b.addEventListener("click", () => { if (c.action === "resetE") Object.keys(E).forEach((k) => (E[k] = 0)); hooks.onChange && hooks.onChange(); });
         return;
       }
@@ -268,7 +283,7 @@
     };
     const R = (S.readouts || []).map((r) => {
       const c = h("div", "w-read" + (r.hidden ? " hid" : ""), reads);
-      h("span", "w-read-l", c, r.label);
+      h("span", "w-read-l", c, tr(r.label));
       const v = h("b", "", c);
       const fn = new Function("w", "return (" + r.expr + ");");
       return { r, v, fn };
@@ -364,7 +379,7 @@
     el("circle", { cx: 210, cy: 160, r: 18, class: "w-meter" }, svg);
     const tv = el("text", { x: 210, y: 161, class: "w-meterL", "text-anchor": "middle", "dominant-baseline": "central" }, svg); tv.textContent = "V";
     const vVal = el("text", { x: 238, y: 166, class: "w-val", "text-anchor": "start" }, svg);
-    const dirT = el("text", { x: 395, y: 170, class: "w-lab", "text-anchor": "middle", direction: "rtl" }, svg);
+    const dirT = el("text", { x: 385, y: 122, class: "w-lab w-small", "text-anchor": "middle", direction: LANG() === "he" ? "rtl" : "ltr" }, svg);
     const segs = []; let L = 0;
     for (let i = 0; i < PTS.length - 1; i++) { const a = PTS[i], b = PTS[i + 1], l = Math.hypot(b[0] - a[0], b[1] - a[1]); segs.push({ a, b, l, s0: L }); L += l; }
     const at = (s) => {
@@ -377,17 +392,17 @@
     for (let i = 0; i < N; i++) dots.push({ s: (i * L) / N, e: el("circle", { r: 6 }, svg) });
     svg.appendChild(aC); svg.appendChild(ta); // keep the ammeter above the moving charges
     const arrows = [L * 0.2, L * 0.42, L * 0.68].map((s) => ({ s, e: el("polygon", { class: "w-arrow" }, svg) }));
-    const ra = h("div", "w-read", reads); h("span", "w-read-l", ra, "זרם I"); const raV = h("b", "", ra);
-    const rv = h("div", "w-read", reads); h("span", "w-read-l", rv, "מתח V"); const rvV = h("b", "", rv);
-    sliderRow(ctl, { label: "מתח (\"הדחיפה\")", min: 0, max: 12, step: 0.5, unit: "V" }, S.V, (v) => { S.V = v; S.changed++; upd(); hooks.onChange && hooks.onChange(); });
+    const ra = h("div", "w-read", reads); h("span", "w-read-l", ra, str("flowI")); const raV = h("b", "", ra);
+    const rv = h("div", "w-read", reads); h("span", "w-read-l", rv, str("flowV")); const rvV = h("b", "", rv);
+    sliderRow(ctl, { label: str("push"), min: 0, max: 12, step: 0.5, unit: "V" }, S.V, (v) => { S.V = v; S.changed++; upd(); hooks.onChange && hooks.onChange(); });
     const tg = h("button", "w-btn", ctl);
     tg.addEventListener("click", () => { S.view = S.view === "conv" ? "elec" : "conv"; upd(); hooks.onChange && hooks.onChange(); });
     function upd() {
       const I = S.V / S.R;
       aVal.textContent = si(I, "A"); vVal.textContent = si(S.V, "V");
       raV.textContent = si(I, "A"); rvV.textContent = si(S.V, "V");
-      tg.textContent = S.view === "conv" ? "הצג תנועת אלקטרונים" : "הצג זרם קונבנציונלי";
-      dirT.textContent = S.view === "conv" ? "זרם קונבנציונלי: מ-(+) אל (−)" : "אלקטרונים: מ-(−) אל (+)";
+      tg.textContent = S.view === "conv" ? str("showElec") : str("showConv");
+      dirT.textContent = S.view === "conv" ? str("dirConv") : str("dirElec");
       dots.forEach((d) => d.e.setAttribute("class", S.view === "conv" ? "w-q conv" : "w-q elec"));
       const dir = S.view === "conv" ? 1 : -1;
       arrows.forEach((a) => {
@@ -418,7 +433,7 @@
     const reads = h("div", "w-reads", wrap);
     const svg = el("svg", { viewBox: "0 0 600 300", class: "w-svg" }, wrap);
     const ctl = h("div", "w-ctls", wrap);
-    const r1 = h("div", "w-read", reads); h("span", "w-read-l", r1, "כוח"); const rV = h("b", "", r1);
+    const r1 = h("div", "w-read", reads); h("span", "w-read-l", r1, str("force")); const rV = h("b", "", r1);
     const mk = (who) => {
       const g = el("g", { class: "w-tap" }, svg);
       const c = el("circle", { r: 38 }, g);
@@ -428,11 +443,11 @@
     };
     const A = mk("a"), B = mk("b");
     const fa = el("polygon", { class: "w-arrow" }, svg), fb = el("polygon", { class: "w-arrow" }, svg);
-    h("div", "w-note", ctl, "לחצו על כדור כדי להחליף את סימן המטען שלו");
+    h("div", "w-note", ctl, str("tapBall"));
     let x = S.d, alive = true, last = performance.now();
     function upd() {
       [[A, S.a], [B, S.b]].forEach(([o, s]) => { o.c.setAttribute("class", s > 0 ? "w-chP" : "w-chN"); o.t.textContent = s > 0 ? "+" : "−"; });
-      rV.innerHTML = S.a * S.b < 0 ? 'משיכה <span dir="ltr">→←</span>' : 'דחייה <span dir="ltr">←→</span>'; // explicit LTR so arrows always show: attraction = toward each other, repulsion = apart
+      rV.innerHTML = S.a * S.b < 0 ? str("attract") : str("repel"); // explicit LTR so arrows always show: attraction = toward each other, repulsion = apart
     }
     (function fr(t) {
       if (!alive) return;
@@ -466,11 +481,11 @@
     const big = h("div", "w-pbig", wrap);
     const raw = h("div", "w-praw", wrap);
     const tbl = h("div", "w-ptbl", wrap);
-    const rows = [["M", "מגה", "×1,000,000"], ["k", "קילו", "×1,000"], ["", "(בלי)", "×1"], ["m", "מילי", "×0.001"], ["µ", "מיקרו", "×0.000001"], ["n", "ננו", "×0.000000001"]]
+    const rows = [["M", "×1,000,000"], ["k", "×1,000"], ["", "×1"], ["m", "×0.001"], ["µ", "×0.000001"], ["n", "×0.000000001"]].map((r, i) => [r[0], str("pfx")[i], r[1]])
       .map((r) => { const d = h("div", "w-prow", tbl, `<b>${r[0] || "—"}</b><span>${r[1]}</span><i>${r[2]}</i>`); return { d, p: r[0] }; });
     const ctl = h("div", "w-ctls", wrap);
     const row = h("div", "wctl", ctl);
-    h("div", "wctl-top", row, `<span class="wctl-lab">${spec.label || "ערך"}</span>`);
+    h("div", "wctl-top", row, `<span class="wctl-lab">${tr(spec.label) || str("value")}</span>`);
     const inp = h("input", "", row); inp.type = "range"; inp.min = 0; inp.max = vals.length - 1; inp.step = 1; inp.value = S.i;
     inp.addEventListener("input", () => { S.i = +inp.value; S.changed++; upd(); hooks.onChange && hooks.onChange(); });
     function upd() {
@@ -485,7 +500,7 @@
   }
 
   window.Widgets = {
-    si,
+    si, tr,
     create(root, spec, hooks = {}) {
       root.innerHTML = "";
       const K = { circuit: Circuit, flow: Flow, charge: Charge, prefix: Prefix }[spec.kind];

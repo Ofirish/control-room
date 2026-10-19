@@ -4,6 +4,7 @@
 (function () {
   "use strict";
   const L = 90, T = 70, RX = 510, B = 280;
+  const T2 = (he, en) => ({ he, en }); // bilingual widget label
 
   /* place components evenly along an edge from A to Z; `breaks` adds extra wire nodes (x or y values) */
   function edge(A, Z, specs, els, breaks = []) {
@@ -36,7 +37,7 @@
   /* rectangular loop, battery on the left edge (+ on top) */
   function loop(o) {
     const els = [];
-    edge([L, B], [L, T], [Object.assign({ t: "bat", id: "B1", v: o.V ?? 9, label: "מקור", show: "v", ls: 1, rev: true }, o.bat || {})], els);
+    edge([L, B], [L, T], [Object.assign({ t: "bat", id: "B1", v: o.V ?? 9, label: T2("מקור", "Source"), show: "v", ls: 1, rev: true }, o.bat || {})], els);
     edge([L, T], [RX, T], o.top || [], els, o.topBreaks);
     edge([RX, T], [RX, B], o.right || [], els, o.rightBreaks);
     edge([RX, B], [L, B], o.bottom || [], els, o.bottomBreaks);
@@ -47,12 +48,12 @@
   /* parallel branches between a top rail and a bottom rail */
   function par(o) {
     const els = [];
-    edge([L, B], [L, T], [{ t: "bat", id: "B1", v: o.V ?? 12, label: "מקור", show: "v", rev: true }], els);
+    edge([L, B], [L, T], [{ t: "bat", id: "B1", v: o.V ?? 12, label: T2("מקור", "Source"), show: "v", rev: true }], els);
     const xs = o.branches.map((b) => b.x);
     let px = L;
     const topBreak = [];
     xs.forEach((x, i) => {
-      const spec = i === 0 && o.mainAm ? [{ t: "am", id: "A0", label: "I כולל", at: 0.5 }] : [];
+      const spec = i === 0 && o.mainAm ? [{ t: "am", id: "A0", label: T2("I כולל", "I total"), at: 0.5 }] : [];
       edge([px, T], [x, T], spec, els); edge([x, B], [px, B], [], els); px = x;
     });
     o.branches.forEach((b) => edge([b.x, T], [b.x, B], b.parts, els));
@@ -60,64 +61,64 @@
   }
 
   const R = (id, r, extra) => Object.assign({ t: "R", id, r, label: id, show: "r" }, extra || {});
-  const lamp = (id, r, extra) => Object.assign({ t: "lamp", id, r, pnom: 1, label: "נורה" }, extra || {});
+  const lamp = (id, r, extra) => Object.assign({ t: "lamp", id, r, pnom: 1, label: T2("נורה", "Lamp") }, extra || {});
   const sw = (id, on, extra) => Object.assign({ t: "sw", id, on, label: id }, extra || {});
-  const am = (id, extra) => Object.assign({ t: "am", id, label: "מד זרם" }, extra || {});
+  const am = (id, extra) => Object.assign({ t: "am", id, label: T2("מד זרם", "Ammeter") }, extra || {});
 
   /* ---------------- reusable widget specs ---------------- */
   const W = {
     charge: () => ({ kind: "charge" }),
     flow: (view) => ({ kind: "flow", V: 3, view: view || "conv" }),
-    prefixA: () => ({ kind: "prefix", unit: "A", minExp: -6, maxExp: 0, value: 0.001, label: "זרם" }),
-    lampLoop: (on) => loop({ V: 9, top: [sw("S1", !!on)], right: [lamp("L1", 81, { ls: -1 })], readouts: [{ label: "זרם", expr: "w.I('B1')", unit: "A" }] }),
+    prefixA: () => ({ kind: "prefix", unit: "A", minExp: -6, maxExp: 0, value: 0.001, label: T2("זרם", "Current") }),
+    lampLoop: (on) => loop({ V: 9, top: [sw("S1", !!on)], right: [lamp("L1", 81, { ls: -1 })], readouts: [{ label: T2("זרם", "Current"), expr: "w.I('B1')", unit: "A" }] }),
     lampLoopV: () => loop({ V: 6, top: [sw("S1", true)], right: [lamp("L1", 36, { ls: -1, pnom: 2 })],
-      controls: [{ label: "מתח המקור", el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }],
-      readouts: [{ label: "זרם", expr: "w.I('B1')", unit: "A" }] }),
-    openLoop: () => loop({ V: 9, top: [sw("S1", false, { vm: { id: "VS", label: "מד מתח", side: 1 } })], right: [lamp("L1", 81, { ls: -1 })],
-      readouts: [{ label: "זרם", expr: "w.I('B1')", unit: "A" }, { label: "מתח על המתג", expr: "Math.abs(w.V('VS'))", unit: "V" }] }),
+      controls: [{ label: T2("מתח המקור", "Source voltage"), el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }],
+      readouts: [{ label: T2("זרם", "Current"), expr: "w.I('B1')", unit: "A" }] }),
+    openLoop: () => loop({ V: 9, top: [sw("S1", false, { vm: { id: "VS", label: T2("מד מתח", "Voltmeter"), side: 1 } })], right: [lamp("L1", 81, { ls: -1 })],
+      readouts: [{ label: T2("זרם", "Current"), expr: "w.I('B1')", unit: "A" }, { label: T2("מתח על המתג", "Voltage across switch"), expr: "Math.abs(w.V('VS'))", unit: "V" }] }),
     shortLoop: (s2) => loop({ V: 9, top: [sw("S1", true)], right: [lamp("L1", 81, { ls: -1 })],
-      extra: [{ t: "sw", id: "S2", on: !!s2, label: "קצר", p: [[RX, T], [RX + 60, T], [RX + 60, B], [RX, B]] }],
-      readouts: [{ label: "זרם במקור", expr: "w.I('B1')", unit: "A" }, { label: "זרם בנורה", expr: "Math.abs(w.I('L1'))", unit: "A" }] }),
+      extra: [{ t: "sw", id: "S2", on: !!s2, label: T2("קצר", "Short"), p: [[RX, T], [RX + 60, T], [RX + 60, B], [RX, B]] }],
+      readouts: [{ label: T2("זרם במקור", "Source current"), expr: "w.I('B1')", unit: "A" }, { label: T2("זרם בנורה", "Lamp current"), expr: "Math.abs(w.I('L1'))", unit: "A" }] }),
     groundLoop: () => loop({ V: 9, gnd: true, top: [sw("S1", true)], right: [lamp("L1", 81, { ls: -1 })],
-      nodes: [{ at: [RX, T], text: "צומת עליון", dx: -110, dy: -14 }, { at: [L, T], text: "", dx: 10, dy: -14 }, { at: [RX, B], text: "צומת תחתון", dx: -110, dy: 26 }] }),
+      nodes: [{ at: [RX, T], text: T2("צומת עליון", "Top node"), dx: -110, dy: -14 }, { at: [L, T], text: "", dx: 10, dy: -14 }, { at: [RX, B], text: T2("צומת תחתון", "Bottom node"), dx: -110, dy: 26 }] }),
     puzzle: () => loop({ V: 9, top: [sw("S1", false)], right: [lamp("L1", 81, { ls: -1 })], bottom: [sw("S3", false)],
       extra: [{ t: "sw", id: "S2", on: true, label: "S2", p: [[RX, T], [RX + 60, T], [RX + 60, B], [RX, B]] }],
-      readouts: [{ label: "זרם במקור", expr: "w.I('B1')", unit: "A" }] }),
-    ohm: (o = {}) => loop({ V: o.V ?? 10, top: [am("A1", { hideVal: !!o.hideI })], right: [R("R1", o.R ?? 1000, { label: "נגד", ls: -1 })],
-      controls: [o.fixV ? null : { label: "מתח V", el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" },
-        { label: "התנגדות R", el: "R1", prop: "r", min: 100, max: 20000, step: 100, log: true, unit: "Ω" }].filter(Boolean),
+      readouts: [{ label: T2("זרם במקור", "Source current"), expr: "w.I('B1')", unit: "A" }] }),
+    ohm: (o = {}) => loop({ V: o.V ?? 10, top: [am("A1", { hideVal: !!o.hideI })], right: [R("R1", o.R ?? 1000, { label: T2("נגד", "Resistor"), ls: -1 })],
+      controls: [o.fixV ? null : { label: T2("מתח V", "Voltage V"), el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" },
+        { label: T2("התנגדות R", "Resistance R"), el: "R1", prop: "r", min: 100, max: 20000, step: 100, log: true, unit: "Ω" }].filter(Boolean),
       readouts: [{ label: "V", expr: "w.param('B1','v')", unit: "V" }, { label: "R", expr: "w.param('R1','r')", unit: "Ω" },
         { label: "I", expr: "w.I('R1')", unit: "A", hidden: !!o.hideI }] }),
-    pipe: () => loop({ V: 10, top: [am("A1")], right: [R("R1", 2000, { label: "התנגדות", ls: -1 })],
-      controls: [{ label: "התנגדות R", el: "R1", prop: "r", min: 200, max: 20000, step: 100, log: true, unit: "Ω" }],
-      readouts: [{ label: "זרם", expr: "w.I('R1')", unit: "A" }] }),
+    pipe: () => loop({ V: 10, top: [am("A1")], right: [R("R1", 2000, { label: T2("התנגדות", "Resistance"), ls: -1 })],
+      controls: [{ label: T2("התנגדות R", "Resistance R"), el: "R1", prop: "r", min: 200, max: 20000, step: 100, log: true, unit: "Ω" }],
+      readouts: [{ label: T2("זרם", "Current"), expr: "w.I('R1')", unit: "A" }] }),
     power: () => loop({ V: 6, top: [sw("S1", true)], right: [lamp("L1", 36, { ls: -1, pnom: 4, show: "P" })],
-      controls: [{ label: "מתח המקור", el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }],
+      controls: [{ label: T2("מתח המקור", "Source voltage"), el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }],
       readouts: [{ label: "V", expr: "w.param('B1','v')", unit: "V" }, { label: "I", expr: "w.I('L1')", unit: "A" }, { label: "P = V·I", expr: "w.P('L1')", unit: "W" }] }),
     energy: () => loop({ V: 12, top: [sw("S1", true)], right: [lamp("L1", 36, { ls: -1, pnom: 4, show: "P" })],
-      controls: [{ label: "מתח המקור", el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }, { type: "button", label: "אפס את מונה האנרגיה", action: "resetE" }],
-      readouts: [{ label: "P", expr: "w.P('L1')", unit: "W" }, { label: "E מצטברת", expr: "w.E('L1')", unit: "J", digits: 1 }] }),
+      controls: [{ label: T2("מתח המקור", "Source voltage"), el: "B1", prop: "v", min: 0, max: 12, step: 0.5, unit: "V" }, { type: "button", label: T2("אפס את מונה האנרגיה", "Reset the energy counter"), action: "resetE" }],
+      readouts: [{ label: "P", expr: "w.P('L1')", unit: "W" }, { label: T2("E מצטברת", "E total"), expr: "w.E('L1')", unit: "J", digits: 1 }] }),
     series: () => loop({ V: 12, top: [R("R1", 2000, { vm: { id: "V1", label: "V1", side: 1 } })], right: [R("R2", 4000, { ls: -1, vm: { id: "V2", label: "V2", side: 1 } })], bottom: [am("A1")],
       controls: [{ label: "R1", el: "R1", prop: "r", min: 500, max: 10000, step: 100, log: true, unit: "Ω" }, { label: "R2", el: "R2", prop: "r", min: 500, max: 10000, step: 100, log: true, unit: "Ω" }],
       readouts: [{ label: "V1", expr: "Math.abs(w.V('R1'))", unit: "V" }, { label: "V2", expr: "Math.abs(w.V('R2'))", unit: "V" }, { label: "V1+V2", expr: "Math.abs(w.V('R1'))+Math.abs(w.V('R2'))", unit: "V" }, { label: "I", expr: "w.I('B1')", unit: "A" }] }),
     parallel: () => par({ V: 12, mainAm: true, branches: [{ x: 330, parts: [am("A1", { label: "I1", ls: -1 }), R("R1", 2000, { ls: -1 })] }, { x: 500, parts: [am("A2", { label: "I2", ls: -1 }), R("R2", 2000, { ls: -1 })] }],
       controls: [{ label: "R1", el: "R1", prop: "r", min: 500, max: 10000, step: 100, log: true, unit: "Ω" }, { label: "R2", el: "R2", prop: "r", min: 500, max: 10000, step: 100, log: true, unit: "Ω" }],
-      readouts: [{ label: "I1", expr: "Math.abs(w.I('R1'))", unit: "A" }, { label: "I2", expr: "Math.abs(w.I('R2'))", unit: "A" }, { label: "I כולל", expr: "w.I('B1')", unit: "A" }, { label: "I1+I2", expr: "Math.abs(w.I('R1'))+Math.abs(w.I('R2'))", unit: "A" }] }),
+      readouts: [{ label: "I1", expr: "Math.abs(w.I('R1'))", unit: "A" }, { label: "I2", expr: "Math.abs(w.I('R2'))", unit: "A" }, { label: T2("I כולל", "I total"), expr: "w.I('B1')", unit: "A" }, { label: "I1+I2", expr: "Math.abs(w.I('R1'))+Math.abs(w.I('R2'))", unit: "A" }] }),
     divider: (o = {}) => loop({ V: 12, rightBreaks: [(T + B) / 2], right: [R("R1", o.R1 ?? 10000, { ls: -1 }), R("R2", o.R2 ?? 10000, { ls: -1, vm: { id: "VO", label: "V_out", side: 1, hideVal: !!o.hide } })],
       nodes: [{ at: [RX, (T + B) / 2], text: "V_out", dx: 12, dy: 4, hideVal: !!o.hide }],
       controls: [o.fixR1 ? null : { label: "R1", el: "R1", prop: "r", min: 1000, max: 50000, step: 500, log: true, unit: "Ω" }, { label: "R2", el: "R2", prop: "r", min: 1000, max: 50000, step: 500, log: true, unit: "Ω" }].filter(Boolean),
       readouts: [{ label: "V_in", expr: "w.param('B1','v')", unit: "V" }, { label: "V_out", expr: "Math.abs(w.V('R2'))", unit: "V", hidden: !!o.hide }] }),
     pot: () => {
       const els = [];
-      edge([L, B], [L, T], [{ t: "bat", id: "B1", v: 12, label: "מקור", show: "v", rev: true }], els);
+      edge([L, B], [L, T], [{ t: "bat", id: "B1", v: 12, label: T2("מקור", "Source"), show: "v", rev: true }], els);
       edge([L, T], [RX, T], [], els);
       edge([RX, B], [L, B], [], els, [380]);
-      els.push({ t: "pot", id: "P1", r: 10000, pos: 0.5, label: "פוטנציומטר", ls: -1, p: [[RX, T], [RX, B]], w: [440, (T + B) / 2] });
+      els.push({ t: "pot", id: "P1", r: 10000, pos: 0.5, label: T2("פוטנציומטר", "Potentiometer"), ls: -1, p: [[RX, T], [RX, B]], w: [440, (T + B) / 2] });
       els.push({ t: "w", id: "ww1", p: [[440, (T + B) / 2], [380, (T + B) / 2]] });
-      els.push({ t: "vm", id: "VW", label: "מתח בגררה", ls: -1, p: [[380, (T + B) / 2], [380, B]] });
+      els.push({ t: "vm", id: "VW", label: T2("מתח בגררה", "Wiper voltage"), ls: -1, p: [[380, (T + B) / 2], [380, B]] });
       return { kind: "circuit", view: [600, 340], els,
-        controls: [{ label: "מיקום הגררה", el: "P1", prop: "pos", min: 0, max: 1, step: 0.01, fmt: (v) => Math.round(v * 100) + "%" }],
-        readouts: [{ label: "V_in", expr: "w.param('B1','v')", unit: "V" }, { label: "מתח בגררה", expr: "w.V('P1')", unit: "V" }] };
+        controls: [{ label: T2("מיקום הגררה", "Wiper position"), el: "P1", prop: "pos", min: 0, max: 1, step: 0.01, fmt: (v) => Math.round(v * 100) + "%" }],
+        readouts: [{ label: "V_in", expr: "w.param('B1','v')", unit: "V" }, { label: T2("מתח בגררה", "Wiper voltage"), expr: "w.V('P1')", unit: "V" }] };
     },
   };
 

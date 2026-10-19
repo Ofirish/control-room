@@ -1,6 +1,6 @@
 # Control Room (חדר בקרה) — educational control-systems game
 
-Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, signals and control loops step by step, from Ohm's law up to PID, stability, PLC and safety.
+Bilingual (Hebrew RTL default, English LTR) web game that teaches electricity, components, circuits, sensors, signals and control loops step by step, from Ohm's law up to PID, stability, PLC and safety.
 
 ## Hosting
 - GitHub Pages, deployed from branch `main`, folder `/` (root). Every push to `main` goes live at https://ofirish.github.io/control-room/ within a minute or two. No build step.
@@ -12,6 +12,7 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
 3. Next level unlocks only after mastery (challenge passed + ~80% on the quiz).
 4. Every concept card shows where it was learned and where it comes back later.
 5. Every term in game text is tappable and opens its concept card without leaving the level.
+6. Everything exists in both Hebrew and English. New concepts need English text in `tools/concepts_en.py`; new levels need an English overlay in `js/worldN.en.js` with the same structure. The checks fail if anything is missing.
 
 ## Data
 - `data/concepts.json` is the single source of truth for concepts, worlds and levels (generated — do not edit by hand).
@@ -20,7 +21,7 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
   - `python3 tools/check_terms.py` — fails if any card text uses a term before the level that teaches it.
   - `python3 tools/check_levels.py` — checks the level content in `js/world*.js`: every `[[term]]` exists and is already taught, no unmarked later term appears, every concept is introduced in its level's demo slides, every concept has a live demo.
 - All three must pass before every push.
-- Before every push, bump the `?v=` cache-busting number on the four `<script>` tags in `index.html` (e.g. `date +%Y%m%d%H%M`), otherwise phones keep running the old cached JS.
+- Before every push, bump the `?v=` cache-busting number on all the `<script>` tags in `index.html` (e.g. `date +%Y%m%d%H%M`), otherwise phones keep running the old cached JS.
 - `tools/playtest.py` plays every level end to end in a headless browser (needs playwright and a local server: `python3 -m http.server 8765`). Add a solution to its `SOL` table for every new level.
 
 ## Code layout
@@ -28,6 +29,8 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
 - `js/concepts.js` — generated copy of the registry (so the game also works from file:// with no fetch).
 - `js/widgets.js` — interactive widgets: `circuit` (DC nodal solver + schematic: bat, R, lamp, sw, am, vm, pot, gnd, wires; nodes are matched by identical coordinates), `flow`, `charge`, `prefix`.
 - `js/world0.js` — World 0 levels (demo slides → guided tasks → challenge → 5-question quiz) and a live demo for every concept. Text markup: `[[conceptId]]` or `[[conceptId|shown text]]`. Task/challenge conditions are JS expressions over the widget `w` and `near(a, b, tol)`.
+- `js/world0.en.js` — English overlay for World 0 (only the texts; array positions match `world0.js`).
+- Language: the 'EN/עב' button in the top bar toggles, saved in progress; `?lang=en` / `?lang=he` in the URL sets it. Widget labels in specs are bilingual objects `T2(he, en)`; widget-internal strings live in the `STR` table in `widgets.js`; engine UI strings in the `UI` table in `engine.js`.
 - `js/engine.js` — map, level runner, mastery gate (challenge + ≥80% quiz), concept cards (bottom sheet), encyclopedia, themes, progress in localStorage key `cr.v1`.
 
 ## Design decisions (agreed with Ofir)
