@@ -20,6 +20,7 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
   - `python3 tools/check_terms.py` — fails if any card text uses a term before the level that teaches it.
   - `python3 tools/check_levels.py` — checks the level content in `js/world*.js`: every `[[term]]` exists and is already taught, no unmarked later term appears, every concept is introduced in its level's demo slides, every concept has a live demo.
 - All three must pass before every push.
+- Before every push, bump the `?v=` cache-busting number on the four `<script>` tags in `index.html` (e.g. `date +%Y%m%d%H%M`), otherwise phones keep running the old cached JS.
 - `tools/playtest.py` plays every level end to end in a headless browser (needs playwright and a local server: `python3 -m http.server 8765`). Add a solution to its `SOL` table for every new level.
 
 ## Code layout
