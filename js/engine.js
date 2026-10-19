@@ -172,7 +172,15 @@
     const steps = h("nav", "steps", app);
     STEPS.forEach(([k, name], j) => {
       const b = h("button", "step" + (k === stepName ? " on" : "") + (allowed(k) ? "" : " dis"), steps, `<i>${j + 1}</i>${name}`);
-      b.addEventListener("click", () => { if (allowed(k)) showLevel(lv, k); else toast("השלימו קודם את השלב הנוכחי"); });
+      b.addEventListener("click", () => {
+        if (allowed(k)) return showLevel(lv, k);
+        const msg = stepName === "demo" ? `השלב הבא נפתח בסוף ההדגמה: לחצו על <b>הבא ←</b> בתחתית (הדגמה ${sub + 1} מתוך ${lv.demo.length})`
+          : stepName === "guided" ? "השלב הבא נפתח אחרי שמשלימים את כל משימות התרגול"
+          : stepName === "challenge" ? "הסיכום נפתח אחרי שעוברים את האתגר"
+          : "סיימו קודם את השלבים הקודמים";
+        toast(msg);
+        const nb = foot.querySelector(".btn.pri"); if (nb) { nb.classList.remove("pulse"); void nb.offsetWidth; nb.classList.add("pulse"); }
+      });
     });
     const main = h("main", "lvl", app);
     const stage = h("section", "stage", main);
@@ -195,8 +203,9 @@
       h("p", "say", text, rich(s.t));
       mount(s.w);
       if (sub > 0) btn("הקודם", "ghost", () => showLevel(lv, "demo", sub - 1));
-      if (sub < n - 1) btn("הבא ←", "pri", () => showLevel(lv, "demo", sub + 1));
-      else btn("לתרגול ←", "pri", () => { allow("guided"); showLevel(lv, "guided", 0); });
+      h("div", "dots", text, lv.demo.map((_, j) => `<i class="${j < sub ? "seen" : j === sub ? "cur" : ""}"></i>`).join("") + `<span>${s.w ? "נסו בשרטוט, ואז לחצו <b>הבא</b>" : "לחצו <b>הבא</b> להמשך"}</span>`);
+      if (sub < n - 1) btn("הבא ←", "pri pulse", () => showLevel(lv, "demo", sub + 1));
+      else btn("לתרגול ←", "pri pulse", () => { allow("guided"); showLevel(lv, "guided", 0); });
     }
 
     if (stepName === "guided") {

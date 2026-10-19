@@ -419,7 +419,7 @@
     let x = S.d, alive = true, last = performance.now();
     function upd() {
       [[A, S.a], [B, S.b]].forEach(([o, s]) => { o.c.setAttribute("class", s > 0 ? "w-chP" : "w-chN"); o.t.textContent = s > 0 ? "+" : "−"; });
-      rV.textContent = S.a * S.b < 0 ? "משיכה ←→" : "דחייה →←";
+      rV.textContent = S.a * S.b < 0 ? "משיכה" : "דחייה";
     }
     (function fr(t) {
       if (!alive) return;
