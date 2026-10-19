@@ -18,7 +18,16 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
 - Edit `tools/build_concepts.py`, then run:
   - `python3 tools/build_concepts.py` — rebuilds the JSON and fails if any prerequisite is introduced after the concept that needs it.
   - `python3 tools/check_terms.py` — fails if any card text uses a term before the level that teaches it.
-- Both must pass before every push. Level texts added later must be covered by the same check.
+  - `python3 tools/check_levels.py` — checks the level content in `js/world*.js`: every `[[term]]` exists and is already taught, no unmarked later term appears, every concept is introduced in its level's demo slides, every concept has a live demo.
+- All three must pass before every push.
+- `tools/playtest.py` plays every level end to end in a headless browser (needs playwright and a local server: `python3 -m http.server 8765`). Add a solution to its `SOL` table for every new level.
+
+## Code layout
+- `index.html` — shell + all CSS (themes via `data-theme` CSS variables: dark, retro, light).
+- `js/concepts.js` — generated copy of the registry (so the game also works from file:// with no fetch).
+- `js/widgets.js` — interactive widgets: `circuit` (DC nodal solver + schematic: bat, R, lamp, sw, am, vm, pot, gnd, wires; nodes are matched by identical coordinates), `flow`, `charge`, `prefix`.
+- `js/world0.js` — World 0 levels (demo slides → guided tasks → challenge → 5-question quiz) and a live demo for every concept. Text markup: `[[conceptId]]` or `[[conceptId|shown text]]`. Task/challenge conditions are JS expressions over the widget `w` and `near(a, b, tol)`.
+- `js/engine.js` — map, level runner, mastery gate (challenge + ≥80% quiz), concept cards (bottom sheet), encyclopedia, themes, progress in localStorage key `cr.v1`.
 
 ## Design decisions (agreed with Ofir)
 - Combines all styles: campaign levels (manual control → build the loop → tune → knowledge check), endless "night shift" arcade, sandbox lab, flashcards with spaced repetition.
@@ -28,6 +37,6 @@ Hebrew (RTL) web game that teaches electricity, components, circuits, sensors, s
 - Plain HTML/CSS/JS, no external libraries or network dependencies; progress saved in localStorage (wrapped in try/catch).
 
 ## Roadmap
-1. World 0 (electricity basics) + level engine (4 steps, mastery gate, concept cards, quiz) + 2 themes.
+1. ✅ World 0 (electricity basics) + level engine (4 steps, mastery gate, concept cards, quiz) + 3 themes (dark, retro, light). Cartoon theme still to do.
 2. World 1 (components) — reuse the RC and thermostat simulators built earlier as levels/boss.
 3. Following worlds in order; each relies only on what came before.
